@@ -3,7 +3,12 @@
 @tailwind utilities;
 
 root {
-  background-color: #FEFAF6;
+  background-color: #1F2937;
+  color: white;
+}
+
+.project-card {
+  background-color: #1F2937;
 }
 
 body {
@@ -13,6 +18,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #141925;
+  color: white;
 }
 
 code {
