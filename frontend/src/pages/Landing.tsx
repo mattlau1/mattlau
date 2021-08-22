@@ -23,8 +23,8 @@ export const Landing: React.FC<LandingProps> = () => {
                   data-aos="zoom-y-out"
                   data-aos-delay="150"
                 >
-                  I'm an aspiring software engineer currently in my second year of computer science
-                  at UNSW Sydney.
+                  I'm an aspiring software engineer currently in my second year of computer science.
+                  Here are some of the projects that I've been working on!
                 </p>
                 <div
                   className="max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center"
