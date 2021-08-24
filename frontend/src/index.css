@@ -5,6 +5,8 @@
 root {
   background-color: #1F2937;
   color: white;
+  overflow-y: hidden;
+  overflow-x: hidden;
 }
 
 .project-card {
@@ -25,4 +27,25 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.linear-gradient {
+  text-align: center;
+
+  background: linear-gradient(to right, #3B82F6 0%,#1E3A8A 50%, #3B82F6 100%);
+  background-size: 200% auto;
+
+  color: #000;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  animation: 3s infinite linear grad;
+}
+
+@keyframes grad {
+  to {
+    background-position: 200% center;
+  }
 }
