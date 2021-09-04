@@ -56,13 +56,11 @@ code {
 
 .project-card {
   background-color: #1f2937;
+  transition: 0.3s;
 }
 
-@keyframes float {
-  to {
-    transform: translate3d(0, -50px, 0);
-    box-shadow: 0 52px 74px rgba(0, 0, 0, 0.12);
-  }
+.project-card:hover {
+  border-color: white;
 }
 
 .project-text {
