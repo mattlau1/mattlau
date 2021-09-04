@@ -1,23 +1,33 @@
 import React from "react";
-import Nav from "./components/Nav";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
 import { Landing } from "./pages/Landing";
+import { HamsterHealth } from "./pages/HamsterHealth";
+import Nav from "./components/Nav";
+import Scrollbar from "react-scrollbars-custom";
 
 function App() {
   return (
     <>
       <Router>
-        <Switch>
-          <Route exact path="/">
-            <Landing />
-          </Route>
-          <Route exact path="/"></Route>
-          <Route exact path="/"></Route>
-          <Route exact path="/"></Route>
-          <Route exact path="/"></Route>
-          <Route exact path="/"></Route>
-        </Switch>
+        <Scrollbar style={{ width: "100vw", height: "100vh" }}>
+          <Nav />
+          <Switch>
+            <Route exact path="/">
+              <Landing />
+            </Route>
+            <Route path="/projects/hamsterwealth">
+              <HamsterHealth />
+            </Route>
+            <Route path="/projects/hamsterhealth">
+              <HamsterHealth />
+            </Route>
+            {/* <Route path="/"></Route>
+          <Route path="/"></Route>
+          <Route path="/"></Route>
+          <Route path="/"></Route> */}
+          </Switch>
+        </Scrollbar>
       </Router>
     </>
   );

@@ -10,8 +10,8 @@ interface LandingProps {}
 
 export const Landing: React.FC<LandingProps> = () => {
   return (
-    <Scrollbar style={{ width: "100vw", height: "100vh" }}>
-      <Nav />
+    <>
+      {/* <Nav /> */}
       <Introduction />
       <ProjectCard
         projectImage={<ProjectImage image={ex1} />}
@@ -24,6 +24,6 @@ export const Landing: React.FC<LandingProps> = () => {
         projectName="Hamster Health"
         projectType="Web App"
       />
-    </Scrollbar>
+    </>
   );
 };
