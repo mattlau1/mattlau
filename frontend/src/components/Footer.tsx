@@ -2,7 +2,7 @@ import React from "react";
 
 interface FooterProps {}
 
-export const Footer: React.FC<FooterProps> = ({}) => {
+export const Footer: React.FC<FooterProps> = () => {
   return (
     <div className="footer-bg">
       <footer className="flex flex-wrap items-center justify-between p-3 m-auto">

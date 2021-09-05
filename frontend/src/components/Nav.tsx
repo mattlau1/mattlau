@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 function Nav() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   return (
     <div>
       <nav className="bg-gray-800">
@@ -18,13 +19,52 @@ function Nav() {
                   >
                     Home
                   </Link>
+                  <div className="relative">
+                    <button
+                      className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                      onClick={() => {
+                        setIsDropdownOpen(!isDropdownOpen);
+                      }}
+                    >
+                      <span>Projects</span>
+                      <svg
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        className="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                          clipRule="evenodd"
+                        ></path>
+                      </svg>
+                    </button>
 
-                  <Link
-                    to="#"
-                    className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                  >
-                    Projects
-                  </Link>
+                    {isDropdownOpen && (
+                      <div className="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg md:w-48 z-50">
+                        <div className="px-2 py-2 bg-gray-800 rounded-md shadow dark-mode:bg-gray-800">
+                          <Link
+                            className="block text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                            to="/projects/hamsterwealth"
+                            onClick={() => {
+                              setIsDropdownOpen(!isDropdownOpen);
+                            }}
+                          >
+                            Hamster Wealth
+                          </Link>
+                          <Link
+                            className="block text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                            to="/projects/hamsterhealth"
+                            onClick={() => {
+                              setIsDropdownOpen(!isDropdownOpen);
+                            }}
+                          >
+                            Hamster Health
+                          </Link>
+                        </div>
+                      </div>
+                    )}
+                  </div>
 
                   <Link
                     to="#"
@@ -37,7 +77,10 @@ function Nav() {
             </div>
             <div className="-mr-2 flex md:hidden">
               <button
-                onClick={() => setIsOpen(!isOpen)}
+                onClick={() => {
+                  setIsOpen(!isOpen);
+                  setIsDropdownOpen(false);
+                }}
                 type="button"
                 className="bg-gray-900 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
                 aria-controls="mobile-menu"
@@ -94,26 +137,64 @@ function Nav() {
           {(ref) => (
             <div className="md:hidden" id="mobile-menu">
               <div ref={ref} className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a
-                  href="#"
+                <Link
+                  to="/"
                   className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
                 >
                   Home
-                </a>
+                </Link>
 
-                <a
-                  href="#"
-                  className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                <div
+                  className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium cursor-pointer"
+                  onClick={() => {
+                    setIsDropdownOpen(!isDropdownOpen);
+                  }}
                 >
-                  Projects
-                </a>
+                  <span>Projects</span>
+                  <svg
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                    className="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                      clipRule="evenodd"
+                    ></path>
+                  </svg>
+                </div>
 
-                <a
-                  href="#"
+                {isDropdownOpen && (
+                  <div className="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg md:w-48 z-50">
+                    <div className="px-2 py-2 bg-gray-800 rounded-md shadow dark-mode:bg-gray-800">
+                      <Link
+                        className="block text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                        to="/projects/hamsterwealth"
+                        onClick={() => {
+                          setIsDropdownOpen(!isDropdownOpen);
+                        }}
+                      >
+                        Hamster Wealth
+                      </Link>
+                      <Link
+                        className="block text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                        to="/projects/hamsterhealth"
+                        onClick={() => {
+                          setIsDropdownOpen(!isDropdownOpen);
+                        }}
+                      >
+                        Hamster Health
+                      </Link>
+                    </div>
+                  </div>
+                )}
+
+                <Link
+                  to="/about"
                   className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
                 >
                   About Me
-                </a>
+                </Link>
               </div>
             </div>
           )}
