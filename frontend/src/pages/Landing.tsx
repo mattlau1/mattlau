@@ -11,7 +11,6 @@ interface LandingProps {}
 export const Landing: React.FC<LandingProps> = () => {
   return (
     <>
-      {/* <Nav /> */}
       <Introduction />
       <ProjectCard
         projectImage={<ProjectImage image={ex1} />}

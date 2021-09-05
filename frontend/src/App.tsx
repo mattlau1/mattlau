@@ -5,6 +5,7 @@ import { Landing } from "./pages/Landing";
 import { HamsterHealth } from "./pages/HamsterHealth";
 import Nav from "./components/Nav";
 import Scrollbar from "react-scrollbars-custom";
+import { Footer } from "./components/Footer";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Route path="/"></Route>
           <Route path="/"></Route> */}
           </Switch>
+          <Footer />
         </Scrollbar>
       </Router>
     </>
