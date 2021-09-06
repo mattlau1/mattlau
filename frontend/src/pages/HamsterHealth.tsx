@@ -1,7 +1,12 @@
 import React from "react";
 import Slider from "react-slick";
 
-import ex1 from "../images/ex1.png";
+import health1 from "../images/health1.png";
+import health2 from "../images/health2.png";
+import health3 from "../images/health3.png";
+import health4 from "../images/health4.png";
+import health5 from "../images/health5.png";
+import health6 from "../images/health6.png";
 import { ProjectImage } from "../components/ProjectImage";
 
 interface HamsterHealthProps {}
@@ -28,11 +33,12 @@ export const HamsterHealth: React.FC<HamsterHealthProps> = () => {
       <div className="max-w-6xl mx-auto md:py-4 md:px-4 sm:px-2">
         <div className="mx-2">
           <Slider {...sliderSettings} className="mb-8 px-4">
-            <ProjectImage image={ex1} />
-            <ProjectImage image={ex1} />
-            <ProjectImage image={ex1} />
-            <ProjectImage image={ex1} />
-            <ProjectImage image={ex1} />
+            <ProjectImage image={health1} />
+            <ProjectImage image={health2} />
+            <ProjectImage image={health3} />
+            <ProjectImage image={health4} />
+            <ProjectImage image={health5} />
+            <ProjectImage image={health6} />
           </Slider>
           <div className="grid grid-cols-2">
             <h1 className="project-title md:text-3xl py-4 leading-2">Hamster Health</h1>
