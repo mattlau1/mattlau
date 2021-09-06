@@ -19,6 +19,7 @@ export const Footer: React.FC<FooterProps> = () => {
                   setGithubHover(false);
                 }}
               >
+                <span className="sr-only">Github</span>
                 <svg
                   className="cursor-pointer"
                   xmlns="http://www.w3.org/2000/svg"

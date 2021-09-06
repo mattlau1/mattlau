@@ -44,7 +44,7 @@ export const HamsterHealth: React.FC<HamsterHealthProps> = () => {
             <h1 className="project-title md:text-3xl py-4 leading-2">Hamster Health</h1>
             <h1 className="project-title md:text-3xl py-4 text-right">March 2021</h1>
           </div>
-          <h3 className="project-subheading pt-4">Tech Stack</h3>
+          <h2 className="project-subheading pt-4">Tech Stack</h2>
           <hr className="my-2" />
 
           <ul className="ml-4 list-disc">
@@ -54,7 +54,7 @@ export const HamsterHealth: React.FC<HamsterHealthProps> = () => {
             <li>Hosting: Netlify, Heroku</li>
           </ul>
 
-          <h3 className="project-subheading pt-4">About</h3>
+          <h2 className="project-subheading pt-4">About</h2>
           <hr className="my-2" />
           <p>
             This project was built for the{" "}
@@ -74,7 +74,7 @@ export const HamsterHealth: React.FC<HamsterHealthProps> = () => {
             users with the highest levels, creating a social aspect of motivation which is lost in
             quarantine life.
           </p>
-          <h3 className="project-subheading pt-4">Challenges</h3>
+          <h2 className="project-subheading pt-4">Challenges</h2>
           <hr className="my-2" />
 
           <ul className="ml-4 list-disc">
@@ -84,7 +84,7 @@ export const HamsterHealth: React.FC<HamsterHealthProps> = () => {
             <li>Deployment</li>
           </ul>
 
-          <h3 className="project-subheading pt-4">What we learned</h3>
+          <h2 className="project-subheading pt-4">What we learned</h2>
           <hr className="my-2" />
 
           <ul className="ml-4 list-disc">
@@ -92,7 +92,7 @@ export const HamsterHealth: React.FC<HamsterHealthProps> = () => {
             <li>What it's like to work on a project with a strict time limit</li>
           </ul>
 
-          <h3 className="project-subheading pt-4">Results</h3>
+          <h2 className="project-subheading pt-4">Results</h2>
           <hr className="my-2" />
 
           <div className="grid md:grid-cols-2 sm:grid-cols-1">
@@ -108,7 +108,7 @@ export const HamsterHealth: React.FC<HamsterHealthProps> = () => {
             </div>
           </div>
 
-          <h3 className="project-subheading pt-4">Links</h3>
+          <h2 className="project-subheading pt-4">Links</h2>
           <hr className="my-2" />
           <ul className="ml-4 list-disc">
             <li>

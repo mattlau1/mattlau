@@ -15,16 +15,19 @@ root {
 @font-face {
   font-family: "Dosis";
   src: local("Dosis"), url(./fonts/Dosis-Semibold.ttf) format("truetype");
+  font-display: swap;
 }
 
 @font-face {
   font-family: "Biotif";
   src: local("Biotif"), url(./fonts/Biotif-Regular.ttf) format("truetype");
+  font-display: swap;
 }
 
 @font-face {
   font-family: "BiotifBold";
   src: local("BiotifBold"), url(./fonts/Biotif-Bold.ttf) format("truetype");
+  font-display: swap;
 }
 
 body {
