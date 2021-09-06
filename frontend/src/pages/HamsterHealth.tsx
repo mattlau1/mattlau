@@ -7,6 +7,7 @@ import health3 from "../images/health3.png";
 import health4 from "../images/health4.png";
 import health5 from "../images/health5.png";
 import health6 from "../images/health6.png";
+import finalists from "../images/hackiethon_finalists.png";
 import { ProjectImage } from "../components/ProjectImage";
 
 interface HamsterHealthProps {}
@@ -96,14 +97,9 @@ export const HamsterHealth: React.FC<HamsterHealthProps> = () => {
           <hr className="my-2" />
 
           <div className="grid md:grid-cols-2 sm:grid-cols-1">
-            <img
-              className=""
-              width="100%"
-              src="https://raw.githubusercontent.com/Team-Hamsterdam/hackiethon-frontend/main/hackiethon_finalists.png"
-              alt="Hackathon Finalists"
-            />
+            <img className="" width="100%" src={finalists} alt="Hackathon Finalists" />
             <div>
-              <p className="ml-2">Our team made it to the top 16 finalists for the hackathon!</p>
+              <p className="ml-2">Our team ranked top 16 out of 75 teams for the hackathon!</p>
               <p className="ml-2">(Team Hamsterdam)</p>
             </div>
           </div>

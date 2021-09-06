@@ -6,6 +6,7 @@ import { ProjectImage } from "../components/ProjectImage";
 
 import ex1 from "../images/ex1.png";
 import health from "../images/health.png";
+import wealth from "../images/wealth.png";
 interface LandingProps {}
 
 export const Landing: React.FC<LandingProps> = () => {
@@ -14,9 +15,9 @@ export const Landing: React.FC<LandingProps> = () => {
       <Introduction />
       <FadeInSection>
         <ProjectCard
-          projectImage={<ProjectImage image={ex1} />}
+          projectImage={<ProjectImage image={wealth} />}
           projectName="Hamster Wealth"
-          projectType="Web App"
+          projectType="Virtual Stock Portfolio Tool"
         />
       </FadeInSection>
 
@@ -24,7 +25,7 @@ export const Landing: React.FC<LandingProps> = () => {
         <ProjectCard
           projectImage={<ProjectImage image={health} />}
           projectName="Hamster Health"
-          projectType="Web App"
+          projectType="Task Organisation Tool"
         />
       </FadeInSection>
     </>
