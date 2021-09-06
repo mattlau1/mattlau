@@ -1,4 +1,5 @@
 import React from "react";
+import { FadeInSection } from "../components/FadeInSection";
 import { Introduction } from "../components/Introduction";
 import { ProjectCard } from "../components/ProjectCard";
 import { ProjectImage } from "../components/ProjectImage";
@@ -10,17 +11,21 @@ export const Landing: React.FC<LandingProps> = () => {
   return (
     <>
       <Introduction />
-      <ProjectCard
-        projectImage={<ProjectImage image={ex1} />}
-        projectName="Hamster Wealth"
-        projectType="Web App"
-      />
+      <FadeInSection>
+        <ProjectCard
+          projectImage={<ProjectImage image={ex1} />}
+          projectName="Hamster Wealth"
+          projectType="Web App"
+        />
+      </FadeInSection>
 
-      <ProjectCard
-        projectImage={<ProjectImage image={ex1} />}
-        projectName="Hamster Health"
-        projectType="Web App"
-      />
+      <FadeInSection>
+        <ProjectCard
+          projectImage={<ProjectImage image={ex1} />}
+          projectName="Hamster Health"
+          projectType="Web App"
+        />
+      </FadeInSection>
     </>
   );
 };

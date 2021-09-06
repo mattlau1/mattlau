@@ -1,24 +1,24 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import "./App.css";
 import { Landing } from "./pages/Landing";
 import { HamsterHealth } from "./pages/HamsterHealth";
 import Nav from "./components/Nav";
-import Scrollbar from "react-scrollbars-custom";
 import { Footer } from "./components/Footer";
+import { HamsterWealth } from "./pages/HamsterWealth";
+import ScrollbarWrapper from "./components/ScrollbarWrapper";
 
 function App() {
   return (
     <>
       <Router>
-        <Scrollbar style={{ width: "100vw", height: "100vh" }}>
+        <ScrollbarWrapper>
           <Nav />
           <Switch>
             <Route exact path="/">
               <Landing />
             </Route>
             <Route path="/projects/hamsterwealth">
-              <HamsterHealth />
+              <HamsterWealth />
             </Route>
             <Route path="/projects/hamsterhealth">
               <HamsterHealth />
@@ -29,7 +29,7 @@ function App() {
           <Route path="/"></Route> */}
           </Switch>
           <Footer />
-        </Scrollbar>
+        </ScrollbarWrapper>
       </Router>
     </>
   );
