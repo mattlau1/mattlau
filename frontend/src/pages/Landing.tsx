@@ -4,7 +4,6 @@ import { Introduction } from "../components/Introduction";
 import { ProjectCard } from "../components/ProjectCard";
 import { ProjectImage } from "../components/ProjectImage";
 
-import ex1 from "../images/ex1.png";
 import health from "../images/health.png";
 import wealth from "../images/wealth.png";
 interface LandingProps {}
