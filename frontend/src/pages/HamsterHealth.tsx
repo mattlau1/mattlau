@@ -30,9 +30,9 @@ export const HamsterHealth: React.FC<HamsterHealthProps> = () => {
   };
 
   return (
-    <section className="relative bg-gradient-to-b from-gray-800">
+    <section className="relative">
       <div className="max-w-6xl mx-auto md:py-4 md:px-4 sm:px-2">
-        <div className="mx-2">
+        <div className="mx-4">
           <Slider {...sliderSettings} className="mb-8 px-4">
             <ProjectImage image={health1} />
             <ProjectImage image={health2} />

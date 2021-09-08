@@ -29,9 +29,9 @@ export const HamsterWealth: React.FC<HamsterWealthProps> = () => {
   };
 
   return (
-    <section className="relative bg-gradient-to-b from-gray-800">
+    <section className="relative">
       <div className="max-w-6xl mx-auto md:py-4 md:px-4 sm:px-2">
-        <div className="mx-2">
+        <div className="mx-4">
           <Slider {...sliderSettings} className="mb-8 px-4">
             <ProjectImage image={wealth1} />
             <ProjectImage image={wealth2} />

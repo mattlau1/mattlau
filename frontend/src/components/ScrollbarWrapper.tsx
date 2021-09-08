@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { createRef, useEffect } from "react";
 import Scrollbar from "react-scrollbars-custom";
 import { withRouter } from "react-router-dom";
 import { History } from "history";
@@ -10,7 +10,7 @@ interface ScrollbarWrapperProps {
 
 // scrollbar wrapper which scrolls to top whenever history is updated
 const ScrollbarWrapper: React.FC<ScrollbarWrapperProps> = ({ history, children }) => {
-  const scrollbarRef = useRef<Scrollbar & HTMLDivElement>(null);
+  const scrollbarRef = createRef<Scrollbar & HTMLDivElement>();
 
   useEffect(() => {
     const unlisten = history.listen(() => {
@@ -22,7 +22,7 @@ const ScrollbarWrapper: React.FC<ScrollbarWrapperProps> = ({ history, children }
     return () => {
       unlisten();
     };
-  }, [history]);
+  }, [history, scrollbarRef]);
 
   return (
     <Scrollbar ref={scrollbarRef} style={{ width: "100vw", height: "100vh" }}>
