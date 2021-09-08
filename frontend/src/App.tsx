@@ -6,6 +6,7 @@ import Nav from "./components/Nav";
 import { Footer } from "./components/Footer";
 import { HamsterWealth } from "./pages/HamsterWealth";
 import ScrollbarWrapper from "./components/ScrollbarWrapper";
+import { About } from "./pages/About";
 
 function App() {
   return (
@@ -17,16 +18,15 @@ function App() {
             <Route exact path="/">
               <Landing />
             </Route>
+            <Route path="/about">
+              <About />
+            </Route>
             <Route path="/projects/hamsterwealth">
               <HamsterWealth />
             </Route>
             <Route path="/projects/hamsterhealth">
               <HamsterHealth />
             </Route>
-            {/* <Route path="/"></Route>
-          <Route path="/"></Route>
-          <Route path="/"></Route>
-          <Route path="/"></Route> */}
           </Switch>
           <Footer />
         </ScrollbarWrapper>

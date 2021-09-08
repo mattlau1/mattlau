@@ -70,23 +70,13 @@ function Nav() {
                   </div>
 
                   <Link
-                    to="#"
+                    to="/about"
                     className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                     onClick={() => {
                       setIsDropdownOpen(false);
                     }}
                   >
                     About Me
-                  </Link>
-
-                  <Link
-                    to="#"
-                    className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                    onClick={() => {
-                      setIsDropdownOpen(false);
-                    }}
-                  >
-                    Contact
                   </Link>
                 </div>
               </div>
@@ -216,15 +206,6 @@ function Nav() {
                   }}
                 >
                   About Me
-                </Link>
-                <Link
-                  to="/about"
-                  className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-                  onClick={() => {
-                    setIsDropdownOpen(false);
-                  }}
-                >
-                  Contact
                 </Link>
               </div>
             </div>
