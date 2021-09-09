@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Slider from "react-slick";
 
 import award from "../images/chronicle_award.png";
@@ -12,6 +12,10 @@ import { ProjectImage } from "../components/ProjectImage";
 interface HamsterWealthProps {}
 
 export const HamsterWealth: React.FC<HamsterWealthProps> = () => {
+  useEffect(() => {
+    document.title = "Matthew Lau | Hamster Wealth";
+  }, []);
+
   const sliderSettings = {
     dots: true,
     infinite: true,

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Slider from "react-slick";
 
 import health1 from "../images/health1.png";
@@ -13,6 +13,10 @@ import { ProjectImage } from "../components/ProjectImage";
 interface HamsterHealthProps {}
 
 export const HamsterHealth: React.FC<HamsterHealthProps> = () => {
+  useEffect(() => {
+    document.title = "Matthew Lau | Hamster Health";
+  }, []);
+
   const sliderSettings = {
     dots: true,
     infinite: true,

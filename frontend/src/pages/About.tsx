@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import ReactTooltip from "react-tooltip";
 
 interface AboutProps {}
 
 export const About: React.FC<AboutProps> = () => {
+  useEffect(() => {
+    document.title = "Matthew Lau | About Me";
+  }, []);
+
   return (
     <section className="relative my-12 md:mb-64 sm:mb-20 xs:py-0">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">

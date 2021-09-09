@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { FadeInSection } from "../components/FadeInSection";
 import { Introduction } from "../components/Introduction";
 import { ProjectCard } from "../components/ProjectCard";
@@ -9,6 +9,10 @@ import wealth from "../images/wealth.png";
 interface LandingProps {}
 
 export const Landing: React.FC<LandingProps> = () => {
+  useEffect(() => {
+    document.title = "Matthew Lau | Aspiring Software Engineer";
+  }, []);
+
   return (
     <>
       <Introduction />
