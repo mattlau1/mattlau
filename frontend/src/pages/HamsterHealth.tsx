@@ -60,7 +60,7 @@ export const HamsterHealth: React.FC<HamsterHealthProps> = () => {
           <p>
             This project was built for the{" "}
             <a
-              className="underline text-blue-600 hover:text-blue-800 visited:text-purple-600"
+              className="hover:text-yellow-600 health-colour"
               href="https://hackiethon.hackmelb.org/"
             >
               Hackiethon 2021 hackathon hosted by HackMelbourne
@@ -109,17 +109,14 @@ export const HamsterHealth: React.FC<HamsterHealthProps> = () => {
           <ul className="ml-4 list-disc">
             <li>
               Live Demo:{" "}
-              <a
-                className="underline text-blue-600 hover:text-blue-800 visited:text-purple-600"
-                href="https://hamsterdam.tech/"
-              >
+              <a className="hover:text-yellow-600 health-colour" href="https://hamsterdam.tech/">
                 https://hamsterdam.tech/
               </a>
             </li>
             <li>
               Frontend Code:{" "}
               <a
-                className="underline text-blue-600 hover:text-blue-800 visited:text-purple-600"
+                className="hover:text-yellow-600 health-colour"
                 href="https://github.com/Team-Hamsterdam/hackiethon-frontend"
               >
                 https://github.com/Team-Hamsterdam/hackiethon-frontend
@@ -128,7 +125,7 @@ export const HamsterHealth: React.FC<HamsterHealthProps> = () => {
             <li>
               Backend Code:{" "}
               <a
-                className="underline text-blue-600 hover:text-blue-800 visited:text-purple-600"
+                className="hover:text-yellow-600 health-colour"
                 href="https://github.com/Team-Hamsterdam/hackiethon-backend"
               >
                 https://github.com/Team-Hamsterdam/hackiethon-backend

@@ -109,8 +109,17 @@ h6 {
   transition: opacity 0.6s ease-out, transform 1.2s ease-out;
   will-change: opacity, visibility;
 }
+
 .fade-in-section.is-visible {
   opacity: 1;
   transform: none;
   visibility: visible;
+}
+
+.wealth-colour {
+  color: rgb(40, 205, 131);
+}
+
+.health-colour {
+  color: #fca13e;
 }

@@ -57,10 +57,7 @@ export const HamsterWealth: React.FC<HamsterWealthProps> = () => {
           <hr className="my-2" />
           <p>
             This project was built for the{" "}
-            <a
-              className="underline text-blue-600 hover:text-blue-800 visited:text-purple-600"
-              href="http://chronicle2021.com/"
-            >
+            <a className="hover:text-green-600 wealth-colour" href="http://chronicle2021.com/">
               Chronicle 2021 hackathon hosted by the Google Developers Student Club at the
               University of Melbourne
             </a>
@@ -105,7 +102,7 @@ export const HamsterWealth: React.FC<HamsterWealthProps> = () => {
             <li>
               Live Demo:{" "}
               <a
-                className="underline text-blue-600 hover:text-blue-800 visited:text-purple-600"
+                className="hover:text-green-600 wealth-colour"
                 href="https://hamsterwealth.netlify.app/"
               >
                 https://hamsterwealth.netlify.app/
@@ -114,7 +111,7 @@ export const HamsterWealth: React.FC<HamsterWealthProps> = () => {
             <li>
               Frontend Code:{" "}
               <a
-                className="underline text-blue-600 hover:text-blue-800 visited:text-purple-600"
+                className="hover:text-green-600 wealth-colour"
                 href="https://github.com/Team-Hamsterdam/chronicle-frontend"
               >
                 https://github.com/Team-Hamsterdam/chronicle-frontend
@@ -123,7 +120,7 @@ export const HamsterWealth: React.FC<HamsterWealthProps> = () => {
             <li>
               Backend Code:{" "}
               <a
-                className="underline text-blue-600 hover:text-blue-800 visited:text-purple-600"
+                className="hover:text-green-600 wealth-colour"
                 href="https://github.com/Team-Hamsterdam/chronicle-backend"
               >
                 https://github.com/Team-Hamsterdam/chronicle-backend
