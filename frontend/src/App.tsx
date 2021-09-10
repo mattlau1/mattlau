@@ -8,6 +8,7 @@ import { HamsterWealth } from "./pages/HamsterWealth";
 import ScrollbarWrapper from "./components/ScrollbarWrapper";
 import { About } from "./pages/About";
 import { Shorten } from "./pages/Shorten";
+import { ShortURL } from "./pages/ShortURL";
 
 function App() {
   return (
@@ -30,6 +31,9 @@ function App() {
             </Route>
             <Route path="/shorten">
               <Shorten />
+            </Route>
+            <Route path="/:shortURL">
+              <ShortURL />
             </Route>
           </Switch>
           <Footer />
