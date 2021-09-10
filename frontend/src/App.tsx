@@ -7,6 +7,7 @@ import { Footer } from "./components/Footer";
 import { HamsterWealth } from "./pages/HamsterWealth";
 import ScrollbarWrapper from "./components/ScrollbarWrapper";
 import { About } from "./pages/About";
+import { Shorten } from "./pages/Shorten";
 
 function App() {
   return (
@@ -26,6 +27,9 @@ function App() {
             </Route>
             <Route path="/projects/hamsterhealth">
               <HamsterHealth />
+            </Route>
+            <Route path="/shorten">
+              <Shorten />
             </Route>
           </Switch>
           <Footer />
