@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Redirect, useParams } from "react-router";
+import MetaTags from "react-meta-tags";
 
 interface ParamTypes {
   shortURL: string;
@@ -11,12 +12,18 @@ interface ShortURLProps {}
 export const ShortURL: React.FC<ShortURLProps> = () => {
   let { shortURL } = useParams<ParamTypes>();
   const [redirectSuccess, setRedirectSuccess] = useState(true);
+  const [imagePath, setImagePath] = useState("");
 
   useEffect(() => {
     axios
       .get(`${process.env.REACT_APP_API || "http://localhost:5000"}/full/${shortURL}`)
       .then((res) => {
-        window.location.href = res.data.fullURL;
+        // check if url is an image
+        const url = res.data.fullURL;
+        if (url.match(/\.(jpeg|jpg|gif|png)$/) != null) {
+          setImagePath(url);
+        }
+        window.location.href = url;
         return;
       })
       .catch((_) => {
@@ -25,6 +32,9 @@ export const ShortURL: React.FC<ShortURLProps> = () => {
   }, [shortURL]);
   return (
     <>
+      <MetaTags>
+        <meta property="og:image" content={imagePath} />
+      </MetaTags>
       {!redirectSuccess && <Redirect to="/" />}
       <section className="relative my-64 md:mb-64 sm:mb-20 xs:py-0">
         <div className="max-w-6xl py-12 mx-auto px-4 sm:px-6">
