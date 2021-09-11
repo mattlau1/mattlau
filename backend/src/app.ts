@@ -15,18 +15,23 @@ const corsOptions = {
   exposedHeaders: ["Content-Type", "Access-Control-Allow-Origin"],
 };
 
-app.use(express.json(), cors(corsOptions));
-
 mongoose.connect(process.env.URI || "");
 
+app.use(express.json());
+
+app.use(cors(corsOptions));
+
 app.get("/", (req, res) => {
-  res.send("Welcome to the mattlau.codes API v2");
+  res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
+  res.send("Welcome to the mattlau.codes API v2.2");
 });
 
 // shortens the given link, puts into db and returns url of shortened link
 // if the shortened link already exists just return the existing one
 app.post("/shorten", async (req, res) => {
-  res.header("Access-Control-Allow-Origin", "http://localhost:3000");
+  res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
+  res.set("Access-Control-Allow-Origin", "http://localhost:3000");
+  res.append("Access-Control-Allow-Origin", "http://localhost:3000");
   if (!isValidURL(req.body.fullURL)) {
     res.sendStatus(400);
     return;
@@ -46,6 +51,7 @@ app.post("/shorten", async (req, res) => {
 
 // gets the full url for a given short url
 app.get("/full/:shortURL", async (req, res) => {
+  res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
   const url = await ShortUrl.findOne({ shortenedURL: req.params.shortURL });
   if (url == null) return res.sendStatus(404);
   url.clicks++;

@@ -21,10 +21,20 @@ export const Shorten: React.FC<ShortenProps> = () => {
   }, [linkText]);
 
   const shortenLink = () => {
+    const headers = {
+      "Access-Control-Allow-Origin": "http://localhost:3000",
+      "Content-Type": "application/json",
+      Accept: "application/json",
+    };
+
     axios
-      .post(`${process.env.REACT_APP_API || "http://localhost:5000"}/shorten`, {
-        fullURL: linkText,
-      })
+      .post(
+        `${process.env.REACT_APP_API || "http://localhost:5000"}/shorten`,
+        {
+          fullURL: linkText,
+        },
+        { headers: headers }
+      )
       .then((res) => {
         console.log(window.location.origin + "/" + res.data.url);
         setLinkText(window.location.origin + "/" + res.data.url);
