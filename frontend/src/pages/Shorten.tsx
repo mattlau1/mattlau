@@ -96,7 +96,7 @@ export const Shorten: React.FC<ShortenProps> = () => {
           <form className="mb-64">
             <div className="grid grid-cols-12">
               <input
-                className="shadow appearance-none border rounded w-full py-3 px-3 text-gray-700 leading-tight md:col-span-10 focus:outline-none focus:shadow-outline md:mr-2 sm:col-span-12"
+                className="shadow appearance-none border rounded w-full py-3 px-3 text-gray-700 leading-tight col-span-12 md:col-span-10 focus:outline-none focus:shadow-outline md:mr-2 sm:col-span-12 text-xs sm:text-sm md:text-lg"
                 type="text"
                 placeholder="https://www.google.com/"
                 value={linkText}
@@ -105,7 +105,7 @@ export const Shorten: React.FC<ShortenProps> = () => {
                 }}
               />
               <button
-                className={`text-gray-300 bg-gray-800 hover:bg-gray-700 hover:text-white font-medium col-span-2 md:col-span-2 text-white py-2 px-4 rounded md:ml-2 sm:col-span-12`}
+                className={`text-gray-300 bg-gray-800 hover:bg-gray-700 hover:text-white font-medium col-span-2 col-span-12 md:col-span-2 text-white py-2 px-4 rounded md:ml-2 sm:col-span-12`}
                 onClick={(e) => {
                   e.preventDefault();
                   buttonToggle ? copyLink() : shortenLink();
