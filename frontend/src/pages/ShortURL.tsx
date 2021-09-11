@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios, { AxiosError } from "axios";
 import React, { useEffect, useState } from "react";
 import { Redirect, useParams } from "react-router";
 import MetaTags from "react-meta-tags";
@@ -27,13 +27,13 @@ export const ShortURL: React.FC<ShortURLProps> = () => {
         window.location.href = url;
         return;
       })
-      .catch((_) => {
+      .catch((e: AxiosError) => {
+        console.log("Error: " + e);
         setRedirectSuccess(false);
       });
   }, [shortURL]);
   return (
     <>
-      {!redirectSuccess && <Redirect to="/" />}
       <MetaTags>
         <meta property="og:image" itemProp="image" content={imagePath} />
         <meta name="og:card" content="summary_large_image" />
@@ -54,6 +54,7 @@ export const ShortURL: React.FC<ShortURLProps> = () => {
           </div>
         </div>
       </section>
+      {!redirectSuccess && <Redirect to="/" />}
     </>
   );
 };
