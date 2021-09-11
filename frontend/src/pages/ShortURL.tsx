@@ -14,12 +14,12 @@ export const ShortURL: React.FC<ShortURLProps> = () => {
 
   useEffect(() => {
     axios
-      .get(`${process.env.API || "http://localhost:5000"}/full/${shortURL}`)
+      .get(`${process.env.REACT_APP_API || "http://localhost:5000"}/full/${shortURL}`)
       .then((res) => {
         window.location.href = res.data.fullURL;
         return;
       })
-      .catch((err) => {
+      .catch((_) => {
         setRedirectSuccess(false);
       });
   }, [shortURL]);
