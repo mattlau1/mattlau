@@ -26,7 +26,7 @@ app.use(cors(corsOptions));
 app.use(express.json());
 
 app.get("/", (req, res) => {
-  res.send("Welcome to the mattlau.codes API v2.3");
+  res.send("Welcome to the mattlau.codes API v3");
 });
 
 app.get("/test1", async (req, res) => {
@@ -61,6 +61,14 @@ app.post("/shorten", async (req, res) => {
   // url doesnt exist, create entry and send shortened url
   const entry = await ShortUrl.create({ fullURL: req.body.fullURL });
   res.send({ url: entry.shortenedURL });
+});
+
+// gets the amount of clicks from a given short url
+app.get("/clicks/:shortURL", async (req, res) => {
+  const url = await ShortUrl.findOne({ shortenedURL: req.params.shortURL });
+  if (url == null) return res.sendStatus(404);
+
+  res.send({ clicks: url.clicks });
 });
 
 // gets the full url for a given short url

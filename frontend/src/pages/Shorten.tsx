@@ -3,13 +3,19 @@ import React, { useEffect, useState } from "react";
 
 interface ShortenProps {}
 
+enum AlertType {
+  ERROR,
+  SUCCESS,
+  INFO,
+}
+
 export const Shorten: React.FC<ShortenProps> = () => {
   const [alertVisible, setAlertVisible] = useState(false);
   const [buttonToggle, setButtonToggle] = useState(false);
   const [linkText, setLinkText] = useState("");
   const [alertTitle, setAlertTitle] = useState("");
   const [alertDesc, setAlertDesc] = useState("");
-  const [errorAlert, setErrorAlert] = useState(false);
+  const [alertType, setAlertType] = useState<AlertType>();
 
   useEffect(() => {
     document.title = "Matthew Lau | Link Shortener";
@@ -20,11 +26,29 @@ export const Shorten: React.FC<ShortenProps> = () => {
     setButtonToggle(linkText.includes(window.location.host));
   }, [linkText]);
 
+  const isValidURL = () => {
+    let url;
+
+    try {
+      url = new URL(linkText);
+    } catch (_) {
+      return false;
+    }
+
+    return url.protocol === "http:" || url.protocol === "https:";
+  };
+
   const shortenLink = () => {
     const headers = {
       "Content-Type": "application/json",
       Accept: "application/json",
     };
+
+    if (!isValidURL()) {
+      setInvalidLinkAlert();
+      showAlert();
+      return;
+    }
 
     axios
       .post(
@@ -35,8 +59,11 @@ export const Shorten: React.FC<ShortenProps> = () => {
         { headers: headers }
       )
       .then((res) => {
-        console.log(window.location.origin + "/" + res.data.url);
-        setLinkText(window.location.origin + "/" + res.data.url);
+        const shortened: string = res.data.url;
+        console.log(shortened);
+        console.log(window.location.origin + "/" + shortened);
+        setLinkText(window.location.origin + "/" + shortened);
+        showClickInfoAlert(shortened);
       })
       .catch((err: AxiosError) => {
         console.log(err);
@@ -50,13 +77,37 @@ export const Shorten: React.FC<ShortenProps> = () => {
   const setInvalidLinkAlert = () => {
     setAlertTitle("Invalid Link Provided");
     setAlertDesc("The provided link is not a valid link. Please check the link and try again.");
-    setErrorAlert(true);
+    setAlertType(AlertType.ERROR);
   };
 
   const setSuccessfulCopyAlert = () => {
     setAlertTitle("Link was successfully copied to clipboard");
     setAlertDesc("");
-    setErrorAlert(false);
+    setAlertType(AlertType.SUCCESS);
+  };
+
+  const setClickInfoAlert = (shortened: string) => {
+    setAlertType(AlertType.INFO);
+    const headers = {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+    };
+
+    axios
+      .get(`${process.env.REACT_APP_API || "http://localhost:5000"}/clicks/${shortened}`, {
+        headers: headers,
+      })
+      .then((res) => {
+        setAlertTitle(`This link has been clicked ${res.data.clicks} time(s)!`);
+        setAlertDesc("");
+      })
+      .catch((err: AxiosError) => {
+        console.log(err);
+        if (err.response!.status === 404) {
+          setInvalidLinkAlert();
+          showAlert();
+        }
+      });
   };
 
   const showAlert = () => {
@@ -66,6 +117,12 @@ export const Shorten: React.FC<ShortenProps> = () => {
     }, 5000);
   };
 
+  const showClickInfoAlert = (shortened: string) => {
+    setClickInfoAlert(shortened);
+    // showAlert();
+    setAlertVisible(true);
+  };
+
   const showSuccessfulCopyAlert = () => {
     setSuccessfulCopyAlert();
     showAlert();
@@ -73,23 +130,47 @@ export const Shorten: React.FC<ShortenProps> = () => {
 
   const copyLink = () => {
     navigator.clipboard.writeText(linkText);
+    showSuccessfulCopyAlert();
   };
 
   return (
     <section className="relative">
       <div className="max-w-6xl mx-auto md:py-4 md:px-4 sm:px-2">
         <div className="mx-4">
-          <div
-            className={`${
-              errorAlert
-                ? "bg-red-100 border-l-4 border-red-500 text-red-700"
-                : "bg-green-100 border-l-4 border-green-500 text-green-700"
-            } p-4 ${alertVisible ? "visible" : "invisible"}`}
-            role="alert"
-          >
-            <p className="font-bold">{alertTitle}</p>
-            <p>{alertDesc}</p>
-          </div>
+          {alertType === AlertType.ERROR && (
+            <div
+              className={`bg-red-100 border-l-4 border-red-500 text-red-700
+               p-4 ${alertVisible ? "visible" : "invisible"}`}
+              role="alert"
+            >
+              <p className="font-bold">{alertTitle}</p>
+              <p>{alertDesc}</p>
+            </div>
+          )}
+          {alertType === AlertType.SUCCESS && (
+            <div
+              className={`
+                 bg-green-100 border-l-4 border-green-500 text-green-700 p-4 ${
+                   alertVisible ? "visible" : "invisible"
+                 }`}
+              role="alert"
+            >
+              <p className="font-bold">{alertTitle}</p>
+              <p>{alertDesc}</p>
+            </div>
+          )}
+          {alertType === AlertType.INFO && (
+            <div
+              className={` bg-blue-100 border-l-4 border-blue-500 text-blue-700 p-4 ${
+                alertVisible ? "visible" : "invisible"
+              }`}
+              role="alert"
+            >
+              <p className="font-bold">{alertTitle}</p>
+              <p>{alertDesc}</p>
+            </div>
+          )}
+
           <h1 className="text-5xl md:text-6xl font-extrabold leading-tighter tracking-normal mb-24 text-center pt-24">
             <span className="bg-clip-text text-transparent linear-gradient">Link Shortener</span>
           </h1>
@@ -109,7 +190,6 @@ export const Shorten: React.FC<ShortenProps> = () => {
                 onClick={(e) => {
                   e.preventDefault();
                   buttonToggle ? copyLink() : shortenLink();
-                  buttonToggle && showSuccessfulCopyAlert();
                 }}
               >
                 <span>{buttonToggle ? "Copy" : "Shorten"}</span>
