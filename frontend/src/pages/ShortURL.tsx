@@ -1,7 +1,7 @@
 import axios, { AxiosError } from "axios";
 import React, { useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
 import { Redirect, useParams } from "react-router";
-import MetaTags from "react-meta-tags";
 
 interface ParamTypes {
   shortURL: string;
@@ -34,10 +34,10 @@ export const ShortURL: React.FC<ShortURLProps> = () => {
   }, [shortURL]);
   return (
     <>
-      <MetaTags>
+      <Helmet>
         <meta property="og:image" itemProp="image" content={imagePath} />
-        <meta name="og:card" content="summary_large_image" />
-      </MetaTags>
+        {/* <meta name="og:card" content="summary_large_image" /> */}
+      </Helmet>
       <section className="relative my-64 md:mb-64 sm:mb-20 xs:py-0">
         <div className="max-w-6xl py-12 mx-auto px-4 sm:px-6">
           <div className="md:pb-12 mx-4">
