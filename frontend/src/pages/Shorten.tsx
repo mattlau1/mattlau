@@ -22,7 +22,6 @@ export const Shorten: React.FC<ShortenProps> = () => {
 
   const shortenLink = () => {
     const headers = {
-      "Access-Control-Allow-Origin": "http://localhost:3000",
       "Content-Type": "application/json",
       Accept: "application/json",
     };

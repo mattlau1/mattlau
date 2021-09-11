@@ -10,28 +10,42 @@ const app = express();
 const corsOptions = {
   origin: "http://localhost:3000",
   credentials: true,
-  methods: ["GET", "POST", "HEAD", "PUT", "PATCH", "DELETE"],
-  allowedHeaders: ["Content-Type", "Access-Control-Allow-Origin"],
-  exposedHeaders: ["Content-Type", "Access-Control-Allow-Origin"],
+  optionSuccessStatus: 200,
 };
 
-mongoose.connect(process.env.URI || "");
-
-app.use(express.json());
+mongoose
+  .connect(process.env.URI || "")
+  .then(() => {
+    console.log("Connected to db");
+  })
+  .catch((e) => {
+    console.log(e);
+  });
 
 app.use(cors(corsOptions));
+app.use(express.json());
 
 app.get("/", (req, res) => {
-  res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
-  res.send("Welcome to the mattlau.codes API v2.2");
+  res.send("Welcome to the mattlau.codes API v2.3");
+});
+
+app.get("/test1", async (req, res) => {
+  res.send("Simple test to see if another route works");
+});
+
+app.get("/test2", async (req, res) => {
+  console.log(process.env);
+  console.log("---------------------");
+  console.log(process.env.URI);
+  const link = await ShortUrl.findOne({ fullURL: "https://www.youtube.com/watch?v=dQw4w9WgXcQ" });
+  if (link) {
+    res.send(link.shortenedURL);
+  }
 });
 
 // shortens the given link, puts into db and returns url of shortened link
 // if the shortened link already exists just return the existing one
 app.post("/shorten", async (req, res) => {
-  res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
-  res.set("Access-Control-Allow-Origin", "http://localhost:3000");
-  res.append("Access-Control-Allow-Origin", "http://localhost:3000");
   if (!isValidURL(req.body.fullURL)) {
     res.sendStatus(400);
     return;
@@ -51,7 +65,6 @@ app.post("/shorten", async (req, res) => {
 
 // gets the full url for a given short url
 app.get("/full/:shortURL", async (req, res) => {
-  res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
   const url = await ShortUrl.findOne({ shortenedURL: req.params.shortURL });
   if (url == null) return res.sendStatus(404);
   url.clicks++;
