@@ -10,7 +10,7 @@ interface ParamTypes {
 interface ShortURLProps {}
 
 export const ShortURL: React.FC<ShortURLProps> = () => {
-  let { shortURL } = useParams<ParamTypes>();
+  const { shortURL } = useParams<ParamTypes>();
   const [redirectSuccess, setRedirectSuccess] = useState(true);
   const [imagePath, setImagePath] = useState("");
 
@@ -19,7 +19,8 @@ export const ShortURL: React.FC<ShortURLProps> = () => {
       .get(`${process.env.REACT_APP_API || "http://localhost:5000"}/full/${shortURL}`)
       .then((res) => {
         // check if url is an image
-        const url = res.data.fullURL;
+        const url: string = res.data.fullURL;
+        console.log("Redirecting to " + url);
         if (url.match(/\.(jpeg|jpg|gif|png)$/) != null) {
           setImagePath(url);
         }
@@ -32,11 +33,11 @@ export const ShortURL: React.FC<ShortURLProps> = () => {
   }, [shortURL]);
   return (
     <>
+      {!redirectSuccess && <Redirect to="/" />}
       <MetaTags>
         <meta property="og:image" itemProp="image" content={imagePath} />
-        <meta name="og:card" content="summary_large_image"></meta>
+        <meta name="og:card" content="summary_large_image" />
       </MetaTags>
-      {!redirectSuccess && <Redirect to="/" />}
       <section className="relative my-64 md:mb-64 sm:mb-20 xs:py-0">
         <div className="max-w-6xl py-12 mx-auto px-4 sm:px-6">
           <div className="md:pb-12 mx-4">
