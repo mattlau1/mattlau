@@ -33,7 +33,8 @@ export const ShortURL: React.FC<ShortURLProps> = () => {
   return (
     <>
       <MetaTags>
-        <meta property="og:image" content={imagePath} />
+        <meta property="og:image" itemProp="image" content={imagePath} />
+        <meta name="og:card" content="summary_large_image"></meta>
       </MetaTags>
       {!redirectSuccess && <Redirect to="/" />}
       <section className="relative my-64 md:mb-64 sm:mb-20 xs:py-0">
