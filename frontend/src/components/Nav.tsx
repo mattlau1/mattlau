@@ -81,6 +81,19 @@ function Nav() {
                 </div>
               </div>
             </div>
+
+            <div className="ml-auto hidden md:block">
+              <Link
+                to="/shorten"
+                className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                onClick={() => {
+                  setIsDropdownOpen(false);
+                }}
+              >
+                Link Shortener
+              </Link>
+            </div>
+
             <div className="-mr-2 flex md:hidden">
               <button
                 onClick={() => {
@@ -206,6 +219,15 @@ function Nav() {
                   }}
                 >
                   About Me
+                </Link>
+                <Link
+                  to="/shorten"
+                  className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                  onClick={() => {
+                    setIsDropdownOpen(false);
+                  }}
+                >
+                  Link Shortener
                 </Link>
               </div>
             </div>
