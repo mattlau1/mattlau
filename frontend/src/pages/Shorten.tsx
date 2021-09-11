@@ -22,7 +22,9 @@ export const Shorten: React.FC<ShortenProps> = () => {
 
   const shortenLink = () => {
     axios
-      .post(`${process.env.API || "http://localhost:5000"}/shorten`, { fullURL: linkText })
+      .post(`${process.env.REACT_APP_API || "http://localhost:5000"}/shorten`, {
+        fullURL: linkText,
+      })
       .then((res) => {
         console.log(window.location.origin + "/" + res.data.url);
         setLinkText(window.location.origin + "/" + res.data.url);
