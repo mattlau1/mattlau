@@ -20,12 +20,13 @@ app.use(express.json(), cors(corsOptions));
 mongoose.connect(process.env.URI || "");
 
 app.get("/", (req, res) => {
-  res.send("Welcome to the mattlau.codes API");
+  res.send("Welcome to the mattlau.codes API v2");
 });
 
 // shortens the given link, puts into db and returns url of shortened link
 // if the shortened link already exists just return the existing one
 app.post("/shorten", async (req, res) => {
+  res.header("Access-Control-Allow-Origin", "http://localhost:3000");
   if (!isValidURL(req.body.fullURL)) {
     res.sendStatus(400);
     return;
