@@ -16,7 +16,26 @@ export const Introduction: React.FC<IntroductionProps> = () => {
                 I'm an aspiring software engineer currently in my second year of computer science at
                 university. Here are some of the projects that I've been working on!
               </p>
-              <div className="max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center"></div>
+              <div className="mx-auto py-16 block">
+                <svg
+                  className="inline animate-bounce"
+                  height="26px"
+                  viewBox="0 0 26 26"
+                  width="26px"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g>
+                    <polygon
+                      fill="white"
+                      points="0.046,2.582 2.13,0.498 12.967,11.334 23.803,0.498 25.887,2.582 12.967,15.502  "
+                    />
+                    <polygon
+                      fill="white"
+                      points="0.046,13.582 2.13,11.498 12.967,22.334 23.803,11.498 25.887,13.582 12.967,26.502  "
+                    />
+                  </g>
+                </svg>
+              </div>
             </div>
           </div>
         </div>
