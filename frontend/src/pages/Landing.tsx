@@ -6,6 +6,7 @@ import { ProjectImage } from "../components/ProjectImage";
 
 import health from "../images/health.png";
 import wealth from "../images/wealth.png";
+import loopmania from "../images/loopmania.png";
 interface LandingProps {}
 
 export const Landing: React.FC<LandingProps> = () => {
@@ -16,6 +17,14 @@ export const Landing: React.FC<LandingProps> = () => {
   return (
     <>
       <Introduction />
+      <FadeInSection>
+        <ProjectCard
+          projectImage={<ProjectImage image={loopmania} />}
+          projectName="Loop Mania"
+          projectType="2D Strategy Game"
+        />
+      </FadeInSection>
+
       <FadeInSection>
         <ProjectCard
           projectImage={<ProjectImage image={wealth} />}

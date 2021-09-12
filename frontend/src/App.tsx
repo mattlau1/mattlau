@@ -5,6 +5,7 @@ import { HamsterHealth } from "./pages/HamsterHealth";
 import Nav from "./components/Nav";
 import { Footer } from "./components/Footer";
 import { HamsterWealth } from "./pages/HamsterWealth";
+import { LoopMania } from "./pages/LoopMania";
 import ScrollbarWrapper from "./components/ScrollbarWrapper";
 import { About } from "./pages/About";
 import { Shorten } from "./pages/Shorten";
@@ -28,6 +29,9 @@ function App() {
             </Route>
             <Route path="/projects/hamsterhealth">
               <HamsterHealth />
+            </Route>
+            <Route path="/projects/loopmania">
+              <LoopMania />
             </Route>
             <Route path="/shorten">
               <Shorten />
