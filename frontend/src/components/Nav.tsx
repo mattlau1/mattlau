@@ -48,6 +48,15 @@ function Nav() {
                         <div className="px-2 py-2 bg-gray-800 rounded-md shadow dark-mode:bg-gray-800">
                           <Link
                             className="block text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                            to="/projects/loopmania"
+                            onClick={() => {
+                              setIsDropdownOpen(!isDropdownOpen);
+                            }}
+                          >
+                            Loop Mania
+                          </Link>
+                          <Link
+                            className="block text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                             to="/projects/hamsterwealth"
                             onClick={() => {
                               setIsDropdownOpen(!isDropdownOpen);
@@ -189,6 +198,15 @@ function Nav() {
                 {isDropdownOpen && (
                   <div className="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg md:w-48 z-50">
                     <div className="px-2 py-2 bg-gray-800 rounded-md shadow dark-mode:bg-gray-800">
+                      <Link
+                        className="block text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                        to="/projects/loopmania"
+                        onClick={() => {
+                          setIsDropdownOpen(!isDropdownOpen);
+                        }}
+                      >
+                        Loop Mania
+                      </Link>
                       <Link
                         className="block text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                         to="/projects/hamsterwealth"
