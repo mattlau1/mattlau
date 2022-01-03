@@ -101,6 +101,15 @@ function Nav() {
               >
                 Link Shortener
               </Link>
+              <Link
+                to="/media"
+                className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                onClick={() => {
+                  setIsDropdownOpen(false);
+                }}
+              >
+                Media
+              </Link>
             </div>
 
             <div className="-mr-2 flex md:hidden">
@@ -246,6 +255,15 @@ function Nav() {
                   }}
                 >
                   Link Shortener
+                </Link>
+                <Link
+                  to="/media"
+                  className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                  onClick={() => {
+                    setIsDropdownOpen(false);
+                  }}
+                >
+                  Media
                 </Link>
               </div>
             </div>

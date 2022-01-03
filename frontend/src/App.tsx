@@ -10,6 +10,7 @@ import ScrollbarWrapper from "./components/ScrollbarWrapper";
 import { About } from "./pages/About";
 import { Shorten } from "./pages/Shorten";
 import { ShortURL } from "./pages/ShortURL";
+import { Media } from "./pages/Media";
 
 function App() {
   return (
@@ -32,6 +33,9 @@ function App() {
             </Route>
             <Route path="/projects/loopmania">
               <LoopMania />
+            </Route>
+            <Route path="/media">
+              <Media />
             </Route>
             <Route path="/shorten">
               <Shorten />
