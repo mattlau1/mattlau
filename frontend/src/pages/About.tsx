@@ -23,13 +23,13 @@ export const About: React.FC<AboutProps> = () => {
             </h1>
             <div className="max-w-3xl mx-auto">
               <p className="text-xl text-gray-100 mb-8 text-left">
-                I'm a penultimate year computer science student who is currently studying at the
-                University of New South Wales in Sydney, expecting to graduate by the end of 2022.
+                I'm a third year computer science student currently studying at the
+                University of New South Wales (UNSW) in Sydney, expecting to graduate by the end of 2022.
               </p>
 
               <p className="text-xl text-gray-100 mb-8 text-left">
                 Feel free to check out some of my other projects on my Github profile, or message me
-                about anything on LinkedIn! (I'm also currently looking for internships!)
+                about anything on LinkedIn!
               </p>
             </div>
             <div className="max-w-3xl mx-auto grid grid-cols-4 gap-y-2 md:grid-cols-8 sm:grid-cols-4">
