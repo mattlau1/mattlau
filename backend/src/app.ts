@@ -8,7 +8,7 @@ require("dotenv").config();
 
 const app = express();
 const corsOptions = {
-  origin: "https://www.mattlau.codes",
+  origin: "https://www.mattlau.tech",
   credentials: true,
   optionSuccessStatus: 200,
 };
@@ -26,7 +26,7 @@ app.use(cors(corsOptions));
 app.use(express.json());
 
 app.get("/", (req, res) => {
-  res.send("Welcome to the mattlau.codes API v3");
+  res.send("Welcome to the mattlau.tech API v3.1");
 });
 
 app.get("/test1", async (req, res) => {
