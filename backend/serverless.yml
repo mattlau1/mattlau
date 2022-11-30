@@ -1,0 +1,22 @@
+service: mattlau-backend
+provider:
+  name: aws
+  runtime: nodejs18.x
+  stage: dev
+  region: ap-southeast-2
+  memorySize: 128
+functions:
+  app:
+    handler: src/app.handler
+    environment: ${file(env.json)}
+    events:
+      - http:
+          path: /
+          method: ANY
+          cors: true
+      - http:
+          path: /{proxy+}
+          method: ANY
+          cors: true
+plugins:
+  - serverless-plugin-typescript

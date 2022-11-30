@@ -2,9 +2,12 @@ import { isValidURL } from "./isValidURL";
 import mongoose from "mongoose";
 import express from "express";
 import cors from "cors";
+import serverless from 'serverless-http';
 import ShortUrl from "./models/ShortUrl";
 
 require("dotenv").config();
+
+const LOCAL = false;
 
 const app = express();
 const corsOptions = {
@@ -34,17 +37,21 @@ app.get("/test1", async (req, res) => {
 });
 
 app.get("/test2", async (req, res) => {
-  console.log(process.env);
-  console.log("---------------------");
-  console.log(process.env.URI);
+  // console.log(process.env);
+  // console.log("---------------------");
+  // console.log(process.env.URI);
   const link = await ShortUrl.findOne({ fullURL: "https://www.youtube.com/watch?v=dQw4w9WgXcQ" });
   if (link) {
     res.send(link.shortenedURL);
+  } else {
+    res.send("Could not fetch from db")
+    console.log(ShortUrl.collection.dbName)
   }
 });
 
 // shortens the given link, puts into db and returns url of shortened link
 // if the shortened link already exists just return the existing one
+// frontend has a route /:shortURL that gets the full url from backend and redirects to that
 app.post("/shorten", async (req, res) => {
   if (!isValidURL(req.body.fullURL)) {
     res.sendStatus(400);
@@ -81,5 +88,10 @@ app.get("/full/:shortURL", async (req, res) => {
   res.send({ fullURL: url.fullURL });
 });
 
-// plan: frontend has a route /:shortURL that gets the full url from backend and redirects to that
-app.listen(process.env.PORT || 5000);
+
+// https://www.npmjs.com/package/serverless
+// https://www.npmjs.com/package/serverless-plugin-typescript
+LOCAL ? app.listen(process.env.PORT || 5000) : module.exports.handler = serverless(app);
+
+
+
