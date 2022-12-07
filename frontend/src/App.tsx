@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Landing } from "./pages/Landing";
 import { HamsterHealth } from "./pages/HamsterHealth";
-import Nav from "./components/Nav";
+import Nav from "./components/Nav/Nav";
 import { Footer } from "./components/Footer";
 import { HamsterWealth } from "./pages/HamsterWealth";
 import { LoopMania } from "./pages/LoopMania";
