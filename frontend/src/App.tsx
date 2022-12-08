@@ -10,6 +10,7 @@ import ScrollbarWrapper from "./components/ScrollbarWrapper";
 import { About } from "./pages/About";
 import { Shorten } from "./pages/Shorten";
 import { ShortURL } from "./pages/ShortURL";
+import Host from "./pages/Host";
 
 function App() {
   return (
@@ -35,6 +36,9 @@ function App() {
             </Route>
             <Route path="/shorten">
               <Shorten />
+            </Route>
+            <Route path="/host">
+              <Host />
             </Route>
             <Route path="/:shortURL">
               <ShortURL />
