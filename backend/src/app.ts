@@ -13,11 +13,11 @@ const LOCAL = true;
 
 const app = express();
 const corsOptions = {
-  origin: "http://localhost:3000",
-  // origin: "https://www.mattlau.tech",
+  origin: LOCAL ? "http://localhost:3000" : "https://www.mattlau.tech",
   credentials: true,
   optionSuccessStatus: 200,
 };
+
 
 mongoose
   .connect(process.env.URI || "")
