@@ -6,6 +6,7 @@ import jwt from "jsonwebtoken"
 import serverless from 'serverless-http';
 import ShortUrl from "./models/ShortUrl";
 import Users from "./models/Users";
+import bcrypt from "bcryptjs"
 
 require("dotenv").config();
 
@@ -104,9 +105,9 @@ app.post("/login", async (req, res) => {
   if (user === null) return res.sendStatus(400);
 
   // check that the encoded stored password is the same as the encoded body password
-  bcrypt.compare(req.body.password, user.password, (err, result) => {
+  bcrypt.compare(req.body.password, user.password, async (err, result) => {
 
-    // correct credentials - generate jwt and return token + 200 status
+    // correct credentials - generate jwt and return token
     if (result === true) {
 
       // check if secret key is there
@@ -116,11 +117,16 @@ app.post("/login", async (req, res) => {
       const token = jwt.sign({ username: req.body.username }, process.env.SECRET_KEY, { expiresIn: "12h" });
 
       // add token to user document
-      user.update({ token: token });
+      user.token = token;
+      await user.save();
 
       // return token
       res.send({ token: token });
-      return res.sendStatus(200);
+      return;
+    }
+
+    if (err) {
+      console.log(err);
     }
     return res.sendStatus(400);
   })
