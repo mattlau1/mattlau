@@ -1,17 +1,16 @@
 import React, { useEffect } from "react";
-import { FadeInSection } from "../components/FadeInSection";
-import { Introduction } from "../components/Introduction";
-import { ProjectCard } from "../components/ProjectCard";
-import { ProjectImage } from "../components/ProjectImage";
-
+import { FadeInSection } from "../components/Landing/FadeInSection";
+import { Introduction } from "../components/Landing/Introduction";
+import { ProjectCard } from "../components/Project/ProjectCard";
+import { ProjectImage } from "../components/Project/ProjectImage";
 import health from "../images/health.png";
 import wealth from "../images/wealth.png";
 import loopmania from "../images/loopmania.png";
-interface LandingProps {}
+interface LandingProps { }
 
 export const Landing: React.FC<LandingProps> = () => {
   useEffect(() => {
-    document.title = "Matthew Lau | Aspiring Software Engineer";
+    document.title = "Matthew Lau";
   }, []);
 
   return (

@@ -8,9 +8,9 @@ import health4 from "../images/health4.png";
 import health5 from "../images/health5.png";
 import health6 from "../images/health6.png";
 import finalists from "../images/hackiethon_finalists.png";
-import { ProjectImage } from "../components/ProjectImage";
+import { ProjectImage } from "../components/Project/ProjectImage";
 
-interface HamsterHealthProps {}
+interface HamsterHealthProps { }
 
 export const HamsterHealth: React.FC<HamsterHealthProps> = () => {
   useEffect(() => {

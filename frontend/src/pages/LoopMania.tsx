@@ -5,9 +5,9 @@ import loop1 from "../images/loop1.png";
 import loop2 from "../images/loop2.png";
 import loop3 from "../images/loop3.png";
 import loop4 from "../images/loop4.png";
-import { ProjectImage } from "../components/ProjectImage";
+import { ProjectImage } from "../components/Project/ProjectImage";
 
-interface LoopManiaProps {}
+interface LoopManiaProps { }
 
 export const LoopMania: React.FC<LoopManiaProps> = () => {
   useEffect(() => {
