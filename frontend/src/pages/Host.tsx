@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import HostForm from '../components/Host/HostForm';
 import LoginForm from '../components/Host/LoginForm';
 
 type Props = {}
@@ -8,9 +9,7 @@ const Host = (props: Props) => {
   const [token, setToken] = useState("");
   return (
     loggedOn ?
-      <div>
-        Logged Ons
-      </div>
+      <HostForm />
       :
       <LoginForm setLoggedOn={setLoggedOn} />
   )
