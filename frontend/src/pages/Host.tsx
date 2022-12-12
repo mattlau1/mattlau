@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import HostForm from '../components/Host/HostForm';
+import UploadForm from '../components/Host/UploadForm';
 import LoginForm from '../components/Host/LoginForm';
 
 type Props = {}
@@ -9,9 +9,9 @@ const Host = (props: Props) => {
   const [token, setToken] = useState("");
   return (
     loggedOn ?
-      <HostForm />
+      <UploadForm token={token} />
       :
-      <LoginForm setLoggedOn={setLoggedOn} />
+      <LoginForm setLoggedOn={setLoggedOn} setToken={setToken} />
   )
 }
 

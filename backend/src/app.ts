@@ -6,19 +6,41 @@ import jwt from "jsonwebtoken"
 import serverless from 'serverless-http';
 import ShortUrl from "./models/ShortUrl";
 import Users from "./models/Users";
+import multer from 'multer'
+import multerS3 from 'multer-s3'
 import bcrypt from "bcryptjs"
-
+import aws from "aws-sdk"
+import { S3Client } from "@aws-sdk/client-s3"
 require("dotenv").config();
 
 const LOCAL = true;
 
 const app = express();
+const s3 = new S3Client({ region: "ap-southeast-2" });
+
 const corsOptions = {
   origin: LOCAL ? "http://localhost:3000" : "https://www.mattlau.tech",
   credentials: true,
   optionSuccessStatus: 200,
 };
 
+const upload = multer({
+  storage: multerS3({
+    s3: s3,
+    acl: 'public-read',
+    bucket: 'images.mattlau.tech',
+    key: function (req, file, cb) {
+      console.log(file);
+      cb(null, Date.now().toString() + file.originalname);
+    }
+  })
+});
+
+aws.config.update({
+  secretAccessKey: process.env.SECRET_ACCESS_KEY,
+  accessKeyId: process.env.ACCESS_KEY_ID,
+  region: 'ap-southeast-2'
+});
 
 mongoose
   .connect(process.env.URI || "")
@@ -30,6 +52,7 @@ mongoose
   });
 
 app.use(cors(corsOptions));
+
 app.use(express.json());
 
 app.get("/", (req, res) => {
@@ -132,8 +155,10 @@ app.post("/login", async (req, res) => {
   })
 })
 
-app.post("/upload", async (req, res) => {
+app.post("/upload", upload.array('file', 25), async (req, res) => {
   if (!req.headers.authorization) return res.sendStatus(400);
+  if (!req.files) return res.sendStatus(400);
+  console.log("Processing files: ", req.files);
 
   // split Bearer out
   const token = req.headers.authorization.split(" ")[1];
@@ -150,11 +175,39 @@ app.post("/upload", async (req, res) => {
   } catch (e) {
     // bad token
     console.log(e);
+    console.log("Bad Token (Expired?)");
     res.sendStatus(400);
     return;
   }
 
-  // now token is valid, upload to S3 and return link
+  // now token is valid/not expired, check if token is from auth'd user
+  const user = Users.findOne({ token: token });
+  if (!user) {
+    console.log("Bad Token (Unauthorised)");
+    res.sendStatus(400);
+    return;
+  }
+
+  // https://github.com/expressjs/multer/issues/133#issuecomment-857294786
+  const files = req.files as Express.Multer.File[];
+
+  if (!files) {
+    console.log("Files Undefined");
+    res.sendStatus(400);
+    return;
+  }
+  // upload to S3 and return URLs
+  console.log("Attempting Upload")
+  res.send({
+    message: "Uploaded!",
+    urls: files.map((file) => ({
+      // @ts-ignore
+      url: file.location,
+      name: file.filename,
+      type: file.mimetype,
+      size: file.size
+    }))
+  });
 
 
 })

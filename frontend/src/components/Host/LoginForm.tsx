@@ -2,7 +2,8 @@ import axios, { AxiosError } from 'axios'
 import React, { useState } from 'react'
 
 type Props = {
-  setLoggedOn: React.Dispatch<React.SetStateAction<boolean>>
+  setLoggedOn: React.Dispatch<React.SetStateAction<boolean>>,
+  setToken: React.Dispatch<React.SetStateAction<string>>
 }
 
 const LoginForm = (props: Props) => {
@@ -26,7 +27,7 @@ const LoginForm = (props: Props) => {
         { headers: headers }
       )
       .then((res) => {
-        console.log(res.data);
+        props.setToken(res.data.token);
         props.setLoggedOn(true);
       })
       .catch((err: AxiosError) => {
