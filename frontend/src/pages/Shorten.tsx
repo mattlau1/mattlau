@@ -1,7 +1,7 @@
 import axios, { AxiosError } from "axios";
 import React, { useEffect, useState } from "react";
 
-interface ShortenProps {}
+interface ShortenProps { }
 
 enum AlertType {
   ERROR,
@@ -39,17 +39,16 @@ export const Shorten: React.FC<ShortenProps> = () => {
   };
 
   const shortenLink = () => {
-    const headers = {
-      "Content-Type": "application/json",
-      Accept: "application/json",
-    };
-
     if (!isValidURL()) {
       setInvalidLinkAlert();
       showAlert();
       return;
     }
 
+    const headers = {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+    };
     axios
       .post(
         `${process.env.REACT_APP_API || "http://localhost:5000"}/shorten`,
@@ -67,7 +66,7 @@ export const Shorten: React.FC<ShortenProps> = () => {
       })
       .catch((err: AxiosError) => {
         console.log(err);
-        if (err.response!.status === 400) {
+        if (err.response) {
           setInvalidLinkAlert();
           showAlert();
         }
@@ -103,7 +102,7 @@ export const Shorten: React.FC<ShortenProps> = () => {
       })
       .catch((err: AxiosError) => {
         console.log(err);
-        if (err.response!.status === 404) {
+        if (err.response) {
           setInvalidLinkAlert();
           showAlert();
         }
@@ -150,9 +149,8 @@ export const Shorten: React.FC<ShortenProps> = () => {
           {alertType === AlertType.SUCCESS && (
             <div
               className={`
-                 bg-green-100 border-l-4 border-green-500 text-green-700 p-4 ${
-                   alertVisible ? "visible" : "invisible"
-                 }`}
+                 bg-green-100 border-l-4 border-green-500 text-green-700 p-4 ${alertVisible ? "visible" : "invisible"
+                }`}
               role="alert"
             >
               <p className="font-bold">{alertTitle}</p>
@@ -161,9 +159,8 @@ export const Shorten: React.FC<ShortenProps> = () => {
           )}
           {alertType === AlertType.INFO && (
             <div
-              className={` bg-blue-100 border-l-4 border-blue-500 text-blue-700 p-4 ${
-                alertVisible ? "visible" : "invisible"
-              }`}
+              className={` bg-blue-100 border-l-4 border-blue-500 text-blue-700 p-4 ${alertVisible ? "visible" : "invisible"
+                }`}
               role="alert"
             >
               <p className="font-bold">{alertTitle}</p>

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-interface FooterProps {}
+interface FooterProps { }
 
 export const Footer: React.FC<FooterProps> = () => {
   const [githubHover, setGithubHover] = useState(false);
@@ -58,7 +58,7 @@ export const Footer: React.FC<FooterProps> = () => {
             </a>
           </li>
         </ul>
-        <div className="flex mx-auto text-white text-center">Copyright Matthew Lau © 2021</div>
+        <div className="flex mx-auto text-white text-center">Copyright Matthew Lau © 2021-2022</div>
       </div>
     </footer>
   );

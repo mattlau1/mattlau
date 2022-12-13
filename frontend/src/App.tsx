@@ -2,14 +2,15 @@ import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Landing } from "./pages/Landing";
 import { HamsterHealth } from "./pages/HamsterHealth";
-import Nav from "./components/Nav";
-import { Footer } from "./components/Footer";
+import Nav from "./components/Nav/Nav";
+import { Footer } from "./components/App/Footer";
 import { HamsterWealth } from "./pages/HamsterWealth";
 import { LoopMania } from "./pages/LoopMania";
-import ScrollbarWrapper from "./components/ScrollbarWrapper";
+import ScrollbarWrapper from "./components/App/ScrollbarWrapper";
 import { About } from "./pages/About";
 import { Shorten } from "./pages/Shorten";
 import { ShortURL } from "./pages/ShortURL";
+import Host from "./pages/Host";
 
 function App() {
   return (
@@ -35,6 +36,9 @@ function App() {
             </Route>
             <Route path="/shorten">
               <Shorten />
+            </Route>
+            <Route path="/host">
+              <Host />
             </Route>
             <Route path="/:shortURL">
               <ShortURL />

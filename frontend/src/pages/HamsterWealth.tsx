@@ -7,9 +7,9 @@ import wealth2 from "../images/wealth2.png";
 import wealth3 from "../images/wealth3.png";
 import wealth4 from "../images/wealth4.jpg";
 import wealth5 from "../images/wealth5.png";
-import { ProjectImage } from "../components/ProjectImage";
+import { ProjectImage } from "../components/Project/ProjectImage";
 
-interface HamsterWealthProps {}
+interface HamsterWealthProps { }
 
 export const HamsterWealth: React.FC<HamsterWealthProps> = () => {
   useEffect(() => {
