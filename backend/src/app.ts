@@ -13,7 +13,7 @@ import aws from "aws-sdk"
 import { S3Client } from "@aws-sdk/client-s3"
 require("dotenv").config();
 
-const LOCAL = true;
+const LOCAL = false;
 
 const app = express();
 const s3 = new S3Client({ region: "ap-southeast-2" });
@@ -156,18 +156,18 @@ app.post("/login", async (req, res) => {
 })
 
 app.post("/upload", upload.array('file', 25), async (req, res) => {
-  if (!req.headers.authorization) return res.sendStatus(400);
-  if (!req.files) return res.sendStatus(400);
+  if (!req.headers.authorization) return res.send({ status: 400, message: "Missing authorization header" });
+  if (!req.files) return res.send({ status: 400, message: "Missing Files" });
   console.log("Processing files: ", req.files);
 
   // split Bearer out
   const token = req.headers.authorization.split(" ")[1];
 
   // check for bad split
-  if (!token || token.length <= 1) return res.sendStatus(400);
+  if (!token || token.length <= 1) return res.send({ status: 400, message: "Bad Split" });
 
   // check if secret key is there
-  if (!process.env.SECRET_KEY) return res.sendStatus(400);
+  if (!process.env.SECRET_KEY) return res.send({ status: 400, message: "Missing Secret Key" });
 
   try {
     // verify token
@@ -175,7 +175,7 @@ app.post("/upload", upload.array('file', 25), async (req, res) => {
   } catch (e) {
     // bad token
     console.log("Bad Token (Expired?)");
-    res.sendStatus(400);
+    res.send({ status: 400, message: "Expired Token" });
     return;
   }
 
@@ -183,7 +183,7 @@ app.post("/upload", upload.array('file', 25), async (req, res) => {
   const user = Users.findOne({ token: token });
   if (!user) {
     console.log("Bad Token (Unauthorised)");
-    res.sendStatus(400);
+    res.send({ status: 400, message: "Unauthorised" })
     return;
   }
 
@@ -192,7 +192,7 @@ app.post("/upload", upload.array('file', 25), async (req, res) => {
 
   if (!files) {
     console.log("Files Undefined");
-    res.sendStatus(400);
+    res.send({ status: 400, message: "Files are undefined" });
     return;
   }
   // upload to S3 and return URLs

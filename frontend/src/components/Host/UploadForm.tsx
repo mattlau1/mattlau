@@ -39,7 +39,7 @@ const UploadForm = (props: Props) => {
         setUrl("http://zap.mattlau.tech/" + (res.data.urls[0].url.split('/').reverse())[0]);
         setProgress(100);
       }).catch(e => {
-        console.log(e.message);
+        console.log(e);
         setProgress(0);
       })
   }
