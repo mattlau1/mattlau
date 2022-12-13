@@ -16,5 +16,5 @@ Frontend & backend for my personal website!
 - AWS Lambda
 - Amazon S3
 
-### Diagram
+### Beautiful Diagram
 ![Infrastructure](http://zap.mattlau.tech/1670951963909/diagram.png)
