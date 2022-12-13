@@ -4,6 +4,8 @@
 # Instructions (for myself)
 - Check the `LOCAL` variable in `app.ts`
 - Check the CORS origin URL in `app.ts`
+- Check domain DNS records (CNAME to S3 bucket, Domain Forwarding to Backend (api.example.com))
+- Check environment variables (also set REACT_APP_API environment variable for frontend)
 - For a locally hosted backend, create a `.env` file with your MongoDB URI inside (`URI=<URI>`). Don't forget to specify which DB to connect to: `.../<DBName>?retryWrites`
 ```
 URI="<URI>"
