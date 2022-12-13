@@ -40,12 +40,14 @@ const s3 = new S3Client({
 });
 console.log("Created S3 Client");
 
+// CORS config
 const corsOptions = {
   origin: LOCAL ? "http://localhost:3000" : "https://www.mattlau.tech",
   credentials: true,
   optionSuccessStatus: 200,
 };
 
+// multer file upload config
 const upload = multer({
   storage: multerS3({
     s3: s3,
@@ -70,6 +72,7 @@ const upload = multer({
 
 console.log("Configuration Complete")
 
+// connect to mongoDB
 mongoose
   .connect(process.env.URI || "")
   .then(() => {
@@ -179,7 +182,8 @@ app.post("/login", async (req, res) => {
   })
 })
 
-app.post("/upload", upload.array('file', 5000), async (req, res) => {
+// uploads a file to AWS S3 Bucket via multer and multer-s3 (auth required)
+app.post("/upload", upload.array('file', 32), async (req, res) => {
   if (!req.headers.authorization) return res.send({ status: 400, message: "Missing authorization header" });
   if (!req.files) return res.send({ status: 400, message: "Missing Files" });
   console.log("Processing files: ", req.files);
