@@ -28,7 +28,7 @@ const upload = multer({
   storage: multerS3({
     s3: s3,
     acl: 'public-read',
-    bucket: 'images.mattlau.tech',
+    bucket: 'zap.mattlau.tech',
     key: function (req, file, cb) {
       console.log(file);
       cb(null, Date.now().toString() + file.originalname);
@@ -174,7 +174,6 @@ app.post("/upload", upload.array('file', 25), async (req, res) => {
     jwt.verify(token, process.env.SECRET_KEY);
   } catch (e) {
     // bad token
-    console.log(e);
     console.log("Bad Token (Expired?)");
     res.sendStatus(400);
     return;
