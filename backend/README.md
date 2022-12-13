@@ -1,7 +1,8 @@
 # About
-- This is the backend for my personal website, hosted on AWS Lambda via the serverless framework (https://www.serverless.com/)
+- This is the backend for my personal website, deployed on AWS Lambda via the serverless framework (https://www.serverless.com/)
+- Media is hosted on an S3 Bucket
 
-# Instructions (for myself)
+# Setup Instructions (for myself)
 - Check the `LOCAL` variable in `app.ts`
 - Check the CORS origin URL in `app.ts`
 - Follow instructions at https://github.com/dougmoscrop/serverless-http/issues/34#issuecomment-637040059 for API Gateway configuration
@@ -20,3 +21,14 @@ URI="<URI>"
 }
 ```
 - Deploy with `serverless deploy` after configuration.
+
+# Account Creation
+- Generate a password using `node src/util/hash.js '<password>'`
+- Insert a document into the `users` collection on MongoDB:
+```json
+{
+    "username": "<username>",
+    "password": "<generated password>",
+    "token": ""
+}
+```

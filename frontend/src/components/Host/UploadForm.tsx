@@ -56,7 +56,7 @@ const UploadForm = (props: Props) => {
     <div className="mx-auto flex flex-col">
       {/* Heading */}
       <div className="my-2 flex justify-center">
-        <h1 className="text-5xl md:text-6xl font-extrabold leading-tighter tracking-normal my-6 text-center">
+        <h1 className="text-5xl md:text-6xl font-extrabold leading-tighter tracking-normal my-12 text-center">
           <span className="bg-clip-text text-transparent linear-gradient">File Hosting Service</span>
         </h1>
       </div>

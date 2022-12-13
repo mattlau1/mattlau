@@ -53,7 +53,7 @@ const LoginForm = (props: Props) => {
       <div className="flex flex-col items-center">
         <input
           className="my-2 w-96 border p-2 text-black"
-          type="email"
+          type="username"
           placeholder="Username"
           onChange={(e) => setUsername(e.target.value)}
         />
