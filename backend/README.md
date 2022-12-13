@@ -1,6 +1,6 @@
 # About
 - This is the backend for my personal website, deployed on AWS Lambda via the serverless framework (https://www.serverless.com/)
-- Media is hosted on an S3 Bucket
+- Files are hosted on an S3 Bucket
 
 # Setup Instructions (for myself)
 - Check the `LOCAL` variable in `app.ts`
