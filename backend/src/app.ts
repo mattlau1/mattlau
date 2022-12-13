@@ -52,10 +52,16 @@ const upload = multer({
     acl: 'public-read',
     bucket: 'zap.mattlau.tech',
     cacheControl: 'max-age=31536000',
-    key: function (req, file, cb) {
+    contentType: (req, file, cb) => {
+      cb(null, file.mimetype);
+    },
+    key: (req, file, cb) => {
       console.log(file);
-      cb(null, Date.now().toString() + file.originalname);
-    }
+      cb(null, Date.now().toString() + '/' + file.originalname);
+    },
+    metadata: function (req, file, cb) {
+      cb(null, { fieldName: file.fieldname });
+    },
   })
 });
 
@@ -223,13 +229,13 @@ app.post("/upload", upload.array('file', 25), async (req, res) => {
       size: file.size
     }))
   });
-
-
 })
 
-// https://www.npmjs.com/package/serverless
-// https://www.npmjs.com/package/serverless-plugin-typescript
-LOCAL ? app.listen(process.env.PORT || 5000) : module.exports.handler = serverless(app);
+// https://github.com/dougmoscrop/serverless-http/issues/34#issuecomment-637040059
+LOCAL ?
+  app.listen(process.env.PORT || 5000)
+  :
+  module.exports.handler = serverless(app, { binary: ['image/png', 'image/jpeg', 'image/gif'] });
 
 
 

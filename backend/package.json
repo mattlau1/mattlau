@@ -12,8 +12,8 @@
   "author": "Matthew Lau",
   "license": "ISC",
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.229.0",
     "@types/random-words": "^1.1.2",
-    "aws-sdk": "^2.1272.0",
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
@@ -35,6 +35,7 @@
     "@types/node": "^16.9.1",
     "@types/shortid": "^0.0.29",
     "nodemon": "^2.0.12",
+    "serverless-apigw-binary": "^0.4.4",
     "serverless-plugin-typescript": "^2.1.4",
     "ts-node": "^10.8.1",
     "typescript": "^4.9.3"

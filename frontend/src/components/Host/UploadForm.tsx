@@ -22,7 +22,7 @@ const UploadForm = (props: Props) => {
 
     const options = {
       headers: {
-        "Authorization": `Bearer ${props.token}`
+        "Authorization": `Bearer ${props.token}`,
       },
       onUploadProgress: (progressEvent: ProgressEvent) => {
         const { loaded, total } = progressEvent;
@@ -36,7 +36,7 @@ const UploadForm = (props: Props) => {
     axios
       .post(`${process.env.REACT_APP_API || "http://localhost:5000"}/upload`, data, options)
       .then(res => {
-        setUrl("http://zap.mattlau.tech/" + (res.data.urls[0].url.split('/').reverse())[0]);
+        setUrl("http://zap.mattlau.tech/" + (res.data.urls[0].url.split('/').reverse())[1] + (res.data.urls[0].url.split('/').reverse())[0]);
         setProgress(100);
       }).catch(e => {
         console.log(e);

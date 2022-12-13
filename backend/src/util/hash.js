@@ -7,7 +7,7 @@ if (process.argv.length !== 3) {
   return;
 }
 
-bcrypt.hash(process.argv[2], 8, (_, hash) => {
+bcrypt.hash(process.argv[2], 6, (_, hash) => {
   bcrypt.compare(process.argv[2], hash, (_, result) => {
     if (result === true) {
       console.log(hash);
