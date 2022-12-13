@@ -62,7 +62,10 @@ const upload = multer({
     metadata: function (req, file, cb) {
       cb(null, { fieldName: file.fieldname });
     },
-  })
+  }),
+  limits: {
+    fileSize: 1024 * 1024 * 1000, // 1000 MB
+  }
 });
 
 console.log("Configuration Complete")
@@ -176,7 +179,7 @@ app.post("/login", async (req, res) => {
   })
 })
 
-app.post("/upload", upload.array('file', 100), async (req, res) => {
+app.post("/upload", upload.array('file', 5000), async (req, res) => {
   if (!req.headers.authorization) return res.send({ status: 400, message: "Missing authorization header" });
   if (!req.files) return res.send({ status: 400, message: "Missing Files" });
   console.log("Processing files: ", req.files);

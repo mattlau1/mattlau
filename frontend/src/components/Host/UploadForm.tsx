@@ -56,11 +56,13 @@ const UploadForm = (props: Props) => {
     <div className="mx-auto flex flex-col">
       {/* Heading */}
       <div className="my-2 flex justify-center">
-        <h1 className="project-title md:text-3xl py-4 leading-2">File Hosting</h1>
+        <h1 className="text-5xl md:text-6xl font-extrabold leading-tighter tracking-normal my-6 text-center">
+          <span className="bg-clip-text text-transparent linear-gradient">File Hosting Service</span>
+        </h1>
       </div>
 
       {/* URL Box */}
-      <div className="my-2 flex justify-center mx-12">
+      <div className="my-2 flex justify-center mx-32">
         <input
           className="shadow appearance-none border rounded w-full py-3 px-3 text-gray-700 leading-tight col-span-12 md:col-span-10 focus:outline-none focus:shadow-outline md:mr-2 sm:col-span-12 text-xs sm:text-sm md:text-lg"
           type="text"
@@ -87,7 +89,7 @@ const UploadForm = (props: Props) => {
 
       {/* Progress Bar */}
       <div className="my-2 flex justify-center">
-        <div className="mx-12 w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+        <div className="mx-32 w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
           <div className="bg-blue-600 h-2.5 rounded-full" style={{ width: progress + "%" }} />
         </div>
       </div>

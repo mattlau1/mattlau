@@ -43,7 +43,9 @@ const LoginForm = (props: Props) => {
   return (
     <div className="mx-auto my-36 flex flex-col">
       <div className="my-2 flex justify-center">
-        <h1 className="project-title md:text-3xl py-4 leading-2">File Hosting</h1>
+        <h1 className="text-5xl md:text-6xl font-extrabold leading-tighter tracking-normal my-6 text-center">
+          <span className="bg-clip-text text-transparent linear-gradient">File Hosting Service</span>
+        </h1>
       </div>
       {showError && <div className="my-2 flex justify-center">
         <p className="md:text-sm text-red-400 leading-2">Error: Invalid Credentials.</p>
