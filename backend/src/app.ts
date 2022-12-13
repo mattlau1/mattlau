@@ -9,14 +9,36 @@ import Users from "./models/Users";
 import multer from 'multer'
 import multerS3 from 'multer-s3'
 import bcrypt from "bcryptjs"
-import aws from "aws-sdk"
 import { S3Client } from "@aws-sdk/client-s3"
+import { exit } from "process";
 require("dotenv").config();
 
-const LOCAL = false;
-
+const LOCAL = true;
 const app = express();
-const s3 = new S3Client({ region: "ap-southeast-2" });
+const required_env = [
+  "URI",
+  "SECRET_KEY",
+  "SECRET_ACCESS_KEY",
+  "ACCESS_KEY_ID",
+]
+
+// check if all environment variables exist
+required_env.map(key => {
+  const env_var = process.env[key];
+  if (!env_var) {
+    console.log("Missing Environment Variable: " + key);
+    exit(1);
+  }
+});
+
+const s3 = new S3Client({
+  credentials: {
+    accessKeyId: process.env.ACCESS_KEY_ID ? process.env.ACCESS_KEY_ID : "",
+    secretAccessKey: process.env.SECRET_ACCESS_KEY ? process.env.SECRET_ACCESS_KEY : ""
+  },
+  region: 'ap-southeast-2'
+});
+console.log("Created S3 Client");
 
 const corsOptions = {
   origin: LOCAL ? "http://localhost:3000" : "https://www.mattlau.tech",
@@ -29,6 +51,7 @@ const upload = multer({
     s3: s3,
     acl: 'public-read',
     bucket: 'zap.mattlau.tech',
+    cacheControl: 'max-age=31536000',
     key: function (req, file, cb) {
       console.log(file);
       cb(null, Date.now().toString() + file.originalname);
@@ -36,16 +59,12 @@ const upload = multer({
   })
 });
 
-aws.config.update({
-  secretAccessKey: process.env.SECRET_ACCESS_KEY,
-  accessKeyId: process.env.ACCESS_KEY_ID,
-  region: 'ap-southeast-2'
-});
+console.log("Configuration Complete")
 
 mongoose
   .connect(process.env.URI || "")
   .then(() => {
-    console.log("Connected to db");
+    console.log("Connected to DB");
   })
   .catch((e) => {
     console.log(e);
@@ -60,19 +79,18 @@ app.get("/", (req, res) => {
 });
 
 app.get("/test1", async (req, res) => {
-  res.send("Simple test to see if another route works");
+  const key1 = process.env.SECRET_ACCESS_KEY && process.env.SECRET_ACCESS_KEY.length;
+  const key2 = process.env.ACCESS_KEY_ID && process.env.ACCESS_KEY_ID.length;
+  const key3 = process.env.SECRET_KEY && process.env.SECRET_KEY.length;
+  res.send(`${key1} ${key2} ${key3}`)
 });
 
 app.get("/test2", async (req, res) => {
-  // console.log(process.env);
-  // console.log("---------------------");
-  // console.log(process.env.URI);
   const link = await ShortUrl.findOne({ fullURL: "https://www.youtube.com/watch?v=dQw4w9WgXcQ" });
   if (link) {
     res.send(link.shortenedURL);
   } else {
     res.send("Could not fetch from db")
-    console.log(ShortUrl.collection.dbName)
   }
 });
 
