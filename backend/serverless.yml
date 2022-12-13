@@ -18,16 +18,5 @@ functions:
           path: /{proxy+}
           method: ANY
           cors: true
-          response:
-            contentHandling: CONVERT_TO_BINARY
 plugins:
   - serverless-plugin-typescript
-  - serverless-apigw-binary
-custom:
-  apigwBinary:
-    types:
-      - 'image/jpeg'
-      - 'image/gif'
-      - 'image/png'
-      - 'video/mp4'
-      - 'audio/mpeg'
