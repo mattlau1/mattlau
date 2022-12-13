@@ -13,7 +13,7 @@ import { S3Client } from "@aws-sdk/client-s3"
 import { exit } from "process";
 require("dotenv").config();
 
-const LOCAL = true;
+const LOCAL = false;
 const app = express();
 const required_env = [
   "URI",
@@ -75,14 +75,11 @@ app.use(cors(corsOptions));
 app.use(express.json());
 
 app.get("/", (req, res) => {
-  res.send("Welcome to the mattlau.tech API v3.1");
+  res.send("Welcome to the mattlau API v4.0");
 });
 
 app.get("/test1", async (req, res) => {
-  const key1 = process.env.SECRET_ACCESS_KEY && process.env.SECRET_ACCESS_KEY.length;
-  const key2 = process.env.ACCESS_KEY_ID && process.env.ACCESS_KEY_ID.length;
-  const key3 = process.env.SECRET_KEY && process.env.SECRET_KEY.length;
-  res.send(`${key1} ${key2} ${key3}`)
+  res.send("Hello");
 });
 
 app.get("/test2", async (req, res) => {
