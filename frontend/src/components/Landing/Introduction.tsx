@@ -1,6 +1,6 @@
 import React from "react";
 
-interface IntroductionProps {}
+interface IntroductionProps { }
 
 export const Introduction: React.FC<IntroductionProps> = () => {
   return (
@@ -13,7 +13,7 @@ export const Introduction: React.FC<IntroductionProps> = () => {
             </h1>
             <div className="max-w-3xl mx-auto">
               <p className="text-xl text-gray-100 mb-8">
-                I'm an aspiring software engineer currently in my third year of computer science at
+                I'm an aspiring software engineer currently studying computer science at
                 university. Here are some of the projects that I've been working on!
               </p>
               <div className="mx-auto py-16 block">
