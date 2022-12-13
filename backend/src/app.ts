@@ -235,7 +235,7 @@ app.post("/upload", upload.array('file', 25), async (req, res) => {
 LOCAL ?
   app.listen(process.env.PORT || 5000)
   :
-  module.exports.handler = serverless(app, { binary: ['image/png', 'image/jpeg', 'image/gif'] });
+  module.exports.handler = serverless(app, { binary: ['image/png', 'image/jpeg', 'image/gif', 'video/mp4', 'audio/mpeg'] });
 
 
 

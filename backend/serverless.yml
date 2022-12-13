@@ -29,3 +29,5 @@ custom:
       - 'image/jpeg'
       - 'image/gif'
       - 'image/png'
+      - 'video/mp4'
+      - 'audio/mpeg'
