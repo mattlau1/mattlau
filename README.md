@@ -1,4 +1,20 @@
 # Matthew's Personal Website
 ## https://mattlau.tech/
-Frontend & backend for my personal website written using TypeScript, React.js, HTML, CSS and Tailwind CSS and deployed on AWS!
+Frontend & backend for my personal website!
 
+## Tech Stack
+### Frontend
+- React.js
+- TypeScript
+- Tailwind
+- AWS Amplify
+
+### Backend
+- TypeScript
+- Express.js
+- MongoDB
+- AWS Lambda
+- Amazon S3
+
+### Beautiful Diagram
+![Infrastructure](http://zap.mattlau.tech/1670951963909/diagram.png)
