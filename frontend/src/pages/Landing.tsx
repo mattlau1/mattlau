@@ -6,6 +6,8 @@ import { ProjectImage } from "../components/Project/ProjectImage";
 import health from "../images/health.png";
 import wealth from "../images/wealth.png";
 import loopmania from "../images/loopmania.png";
+import hosting from "../images/hosting2.png";
+
 interface LandingProps { }
 
 export const Landing: React.FC<LandingProps> = () => {
@@ -18,9 +20,19 @@ export const Landing: React.FC<LandingProps> = () => {
       <Introduction />
       <FadeInSection>
         <ProjectCard
+          projectImage={<ProjectImage image={hosting} />}
+          projectName="File Hosting Service"
+          projectType="Cloud Storage and Media Sharing Utility"
+          projectRoute="host"
+        />
+      </FadeInSection>
+
+      <FadeInSection>
+        <ProjectCard
           projectImage={<ProjectImage image={loopmania} />}
           projectName="Loop Mania"
           projectType="2D Strategy Game"
+          projectRoute="loopmania"
         />
       </FadeInSection>
 
@@ -29,6 +41,7 @@ export const Landing: React.FC<LandingProps> = () => {
           projectImage={<ProjectImage image={wealth} />}
           projectName="Hamster Wealth"
           projectType="Virtual Stock Portfolio Tool"
+          projectRoute="hamsterwealth"
         />
       </FadeInSection>
 
@@ -37,6 +50,7 @@ export const Landing: React.FC<LandingProps> = () => {
           projectImage={<ProjectImage image={health} />}
           projectName="Hamster Health"
           projectType="Task Organisation Tool"
+          projectRoute="hamsterhealth"
         />
       </FadeInSection>
     </>

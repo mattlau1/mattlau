@@ -2,20 +2,22 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 interface ProjectCardProps {
-  projectType: string;
-  projectName: string;
-  projectImage: React.ReactNode;
+  projectType: string,
+  projectName: string,
+  projectImage: React.ReactNode,
+  projectRoute: string
 }
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({
   projectType,
   projectName,
   projectImage,
+  projectRoute
 }) => {
   return (
     <section className="relative m-4 my-48" id="project">
       <div className="max-w-6xl mx-auto md:py-4 md:px-4 sm:px-2 rounded-md border border-gray-500 project-card cursor-pointer">
-        <Link to={`projects/${projectName.toLowerCase().replace(" ", "")}`}>
+        <Link to={`projects/${projectRoute}`}>
           <p
             className="text-xs text-gray-100 mt-2 mx-2 project-text"
             data-aos="zoom-y-out"

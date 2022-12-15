@@ -61,7 +61,7 @@ export const HamsterWealth: React.FC<HamsterWealthProps> = () => {
           <hr className="my-2" />
           <p>
             This project was built for the{" "}
-            <a className="hover:text-green-600 wealth-colour" href="http://chronicle2021.com/">
+            <a className="hover:text-green-600 wealth-colour" href="https://chroniclehacks.devpost.com/">
               Chronicle 2021 hackathon hosted by the Google Developers Student Club at the
               University of Melbourne
             </a>
@@ -82,7 +82,7 @@ export const HamsterWealth: React.FC<HamsterWealthProps> = () => {
             <li>Adjusting to changing requirements</li>
           </ul>
 
-          <h2 className="project-subheading pt-4">What we learned</h2>
+          <h2 className="project-subheading pt-4">What I learned</h2>
           <hr className="my-2" />
 
           <ul className="ml-4 list-disc">
@@ -103,15 +103,6 @@ export const HamsterWealth: React.FC<HamsterWealthProps> = () => {
           <h2 className="project-subheading pt-4">Links</h2>
           <hr className="my-2" />
           <ul className="ml-4 list-disc">
-            <li>
-              Live Demo:{" "}
-              <a
-                className="hover:text-green-600 wealth-colour"
-                href="https://hamsterwealth.netlify.app/"
-              >
-                https://hamsterwealth.netlify.app/
-              </a>
-            </li>
             <li>
               Frontend Code:{" "}
               <a

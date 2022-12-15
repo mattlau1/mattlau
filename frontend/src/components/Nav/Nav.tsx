@@ -40,6 +40,11 @@ function Nav() {
                       <div className="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg md:w-48 z-50">
                         <div className="px-2 py-2 bg-gray-800 rounded-md shadow dark-mode:bg-gray-800">
                           <DropdownLink
+                            path="/projects/host"
+                            setDropdownOpen={setProjectDropdownOpen}
+                            text="File Hosting Service"
+                          />
+                          <DropdownLink
                             path="/projects/loopmania"
                             setDropdownOpen={setProjectDropdownOpen}
                             text="Loop Mania"
@@ -202,6 +207,11 @@ function Nav() {
                 {projectDropdownOpen && (
                   <div className="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg md:w-48 z-50">
                     <div className="px-2 py-2 bg-gray-800 rounded-md shadow dark-mode:bg-gray-800">
+                      <DropdownLink
+                        path="/projects/host"
+                        setDropdownOpen={setProjectDropdownOpen}
+                        text="File Hosting Service"
+                      />
                       <DropdownLink
                         path="/projects/loopmania"
                         setDropdownOpen={setProjectDropdownOpen}

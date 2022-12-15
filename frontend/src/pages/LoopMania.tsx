@@ -71,13 +71,48 @@ export const LoopMania: React.FC<LoopManiaProps> = () => {
             <li>Making sure we were following good object oriented design practices</li>
           </ul>
 
-          <h2 className="project-subheading pt-4">What we learned</h2>
+          <h2 className="project-subheading pt-4">What I learned</h2>
           <hr className="my-2" />
-
           <ul className="ml-4 list-disc">
             <li>How to plan, design and implement an object oriented application</li>
             <li>How to create a working desktop application in Java</li>
             <li>How to design code for reusability and extendibility</li>
+          </ul>
+          <h2 className="project-subheading pt-4">Links</h2>
+          <hr className="my-2" />
+          <ul className="ml-4 list-disc">
+            <li>Code: {" "}
+              <a
+                className="loop-colour hover:text-green-600"
+                href="https://github.com/mattlau1/loop-mania"
+              >
+                https://github.com/mattlau1/loop-mania
+              </a>
+            </li>
+            <li>Project Timeline {" "}
+              <a
+                className="loop-colour hover:text-green-600"
+                href="http://zap.mattlau.tech/Loop%20Mania%20Project%20Timeline.pdf"
+              >
+                http://zap.mattlau.tech/Loop%20Mania%20Project%20Timeline.pdf
+              </a>
+            </li>
+            <li>UML Diagram: {" "}
+              <a
+                className="loop-colour hover:text-green-600"
+                href="http://zap.mattlau.tech/Loop%20Mania%20UML%20Diagram.pdf"
+              >
+                http://zap.mattlau.tech/Loop%20Mania%20UML%20Diagram.pdf
+              </a>
+            </li>
+            <li>UI Design {" "}
+              <a
+                className="loop-colour hover:text-green-600"
+                href="http://zap.mattlau.tech/Loop%20Mania%20UI%20Design.pdf"
+              >
+                http://zap.mattlau.tech/Loop%20Mania%20UI%20Design.pdf
+              </a>
+            </li>
           </ul>
         </div>
       </div>

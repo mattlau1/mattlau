@@ -9,7 +9,7 @@ export const About: React.FC<AboutProps> = () => {
   }, []);
 
   return (
-    <section className="relative my-12 md:mb-64 sm:mb-20 xs:py-0">
+    <section className="relative my-12 md:mb-48 sm:mb-20 xs:py-0">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="md:pb-12 mx-4">
           <div className="text-center pb-12 md:pb-16">
@@ -23,13 +23,13 @@ export const About: React.FC<AboutProps> = () => {
             </h1>
             <div className="max-w-3xl mx-auto">
               <p className="text-xl text-gray-100 mb-8 text-left">
-                I'm a third year computer science student currently studying at the
-                University of New South Wales (UNSW) in Sydney, graduating in May 2023.
+                I'm a 2022 computer science graduate from the
+                University of New South Wales (UNSW) in Sydney.
               </p>
 
               <p className="text-xl text-gray-100 mb-8 text-left">
-                Feel free to check out some of my other projects on my Github profile, or message me
-                about anything on LinkedIn!
+                Feel free to check out some of my other projects on my <a className="text-blue-500 hover:text-blue-700" href="https://github.com/mattlau1">Github profile</a>, or message me
+                about anything on <a className="text-blue-500 hover:text-blue-700" href="https://www.linkedin.com/in/matthew-lau1/">LinkedIn</a>! Alternatively, please email me at <a className="text-blue-500 hover:text-blue-700" href="mailto:matt@mattlau.tech">matt@mattlau.tech</a>.
               </p>
             </div>
             <div className="max-w-3xl mx-auto grid grid-cols-4 gap-y-2 md:grid-cols-8 sm:grid-cols-4">

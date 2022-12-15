@@ -65,7 +65,7 @@ export const HamsterHealth: React.FC<HamsterHealthProps> = () => {
             This project was built for the{" "}
             <a
               className="hover:text-yellow-600 health-colour"
-              href="https://hackiethon.hackmelb.org/"
+              href="https://hackiethon.devpost.com/"
             >
               Hackiethon 2021 hackathon hosted by HackMelbourne
             </a>
@@ -89,7 +89,7 @@ export const HamsterHealth: React.FC<HamsterHealthProps> = () => {
             <li>Deployment</li>
           </ul>
 
-          <h2 className="project-subheading pt-4">What we learned</h2>
+          <h2 className="project-subheading pt-4">What I learned</h2>
           <hr className="my-2" />
 
           <ul className="ml-4 list-disc">
@@ -111,12 +111,6 @@ export const HamsterHealth: React.FC<HamsterHealthProps> = () => {
           <h2 className="project-subheading pt-4">Links</h2>
           <hr className="my-2" />
           <ul className="ml-4 list-disc">
-            <li>
-              Live Demo:{" "}
-              <a className="hover:text-yellow-600 health-colour" href="https://hamsterdam.tech/">
-                https://hamsterdam.tech/
-              </a>
-            </li>
             <li>
               Frontend Code:{" "}
               <a

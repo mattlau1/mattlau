@@ -11,6 +11,7 @@ import { About } from "./pages/About";
 import { Shorten } from "./pages/Shorten";
 import { ShortURL } from "./pages/ShortURL";
 import Host from "./pages/Host";
+import { FileHosting } from "./pages/FileHosting";
 
 function App() {
   return (
@@ -33,6 +34,9 @@ function App() {
             </Route>
             <Route path="/projects/loopmania">
               <LoopMania />
+            </Route>
+            <Route path="/projects/host">
+              <FileHosting />
             </Route>
             <Route path="/shorten">
               <Shorten />
