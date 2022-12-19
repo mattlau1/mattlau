@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
 import Slider from "react-slick";
 
-import loop1 from "../images/loop1.png";
-import loop2 from "../images/loop2.png";
-import loop3 from "../images/loop3.png";
-import loop4 from "../images/loop4.png";
-import { ProjectImage } from "../components/Project/ProjectImage";
+import loop1 from "../../images/projects/loopmania/loop1.png";
+import loop2 from "../../images/projects/loopmania/loop2.png";
+import loop3 from "../../images/projects/loopmania/loop3.png";
+import loop4 from "../../images/projects/loopmania/loop4.png";
+import { ProjectImage } from "../../components/Project/ProjectImage";
 
 interface LoopManiaProps { }
 

@@ -1,19 +1,25 @@
 import React, { useEffect } from "react";
 import Slider from "react-slick";
+import cook1 from "../../images/projects/instacook/cook1.png";
+import cook2 from "../../images/projects/instacook/cook2.png";
+import cook3 from "../../images/projects/instacook/cook3.png";
+import cook4 from "../../images/projects/instacook/cook4.png";
+import cook5 from "../../images/projects/instacook/cook5.png";
+import cook6 from "../../images/projects/instacook/cook6.png";
+import cook7 from "../../images/projects/instacook/cook7.png";
+import cook8 from "../../images/projects/instacook/cook8.png";
+import cook9 from "../../images/projects/instacook/cook9.png";
+import cook10 from "../../images/projects/instacook/cook10.png";
 
-import hosting1 from "../images/hosting1.png";
-import hosting2 from "../images/hosting2.png";
-import hosting3 from "../images/hosting3.png";
-import hosting4 from "../images/hosting4.png";
-import { ProjectImage } from "../components/Project/ProjectImage";
+import { ProjectImage } from "../../components/Project/ProjectImage";
 import { Link } from "react-router-dom";
 
 type Props = {
 }
 
-export const FileHosting = (props: Props) => {
+export const Instacook = (props: Props) => {
   useEffect(() => {
-    document.title = "Matthew Lau | File Hosting";
+    document.title = "Matthew Lau | Instacook";
   }, []);
 
   const sliderSettings = {
@@ -37,21 +43,27 @@ export const FileHosting = (props: Props) => {
       <div className="max-w-6xl mx-auto md:py-4 md:px-4 sm:px-2">
         <div className="mx-4">
           <Slider {...sliderSettings} className="mb-8 px-4">
-            <ProjectImage extraClasses="border border-white rounded-none" image={hosting1} />
-            <ProjectImage extraClasses="border border-white rounded-none" image={hosting2} />
-            <ProjectImage extraClasses="border border-white rounded-none" image={hosting3} />
-            <ProjectImage extraClasses="border border-white rounded-none" image={hosting4} />
+            <ProjectImage image={cook1} />
+            <ProjectImage image={cook2} />
+            <ProjectImage image={cook3} />
+            <ProjectImage image={cook4} />
+            <ProjectImage image={cook5} />
+            <ProjectImage image={cook6} />
+            <ProjectImage image={cook7} />
+            <ProjectImage image={cook8} />
+            <ProjectImage image={cook9} />
+            <ProjectImage image={cook10} />
           </Slider>
           <div className="grid grid-cols-2">
-            <h1 className="project-title md:text-3xl py-4 leading-2">File Hosting Service</h1>
-            <h1 className="project-title md:text-3xl py-4 text-right">December 2022</h1>
+            <h1 className="project-title md:text-3xl py-4 leading-2">Instacook</h1>
+            <h1 className="project-title md:text-3xl py-4 text-right">September - November 2022</h1>
           </div>
 
           <h2 className="project-subheading pt-4">Tech Stack</h2>
           <hr className="my-2" />
           <ul className="ml-4 list-disc">
-            <li>Frontend: React.js, TypeScript, Tailwind, AWS Amplify</li>
-            <li>Backend: TypeScript, Express.js, AWS Lambda, AWS API Gateway, Amazon S3, MongoDB</li>
+            <li>Frontend: React.js, TypeScript, Material UI</li>
+            <li>Backend: GraphQL, Node.js, Express.js, MongoDB</li>
           </ul>
 
           <h2 className="project-subheading pt-4">About</h2>
