@@ -63,53 +63,61 @@ export const Instacook = (props: Props) => {
           <hr className="my-2" />
           <ul className="ml-4 list-disc">
             <li>Frontend: React.js, TypeScript, Material UI</li>
-            <li>Backend: GraphQL, Node.js, Express.js, MongoDB</li>
+            <li>Backend: GraphQL, Javascript, Node.js, Express.js, MongoDB</li>
           </ul>
 
           <h2 className="project-subheading pt-4">About</h2>
           <hr className="my-2" />
           <p>
-            Authenticated users can log in and choose a file to upload. After uploading it, a link starting with zap.mattlau.tech/ can be copied and shared.
+            Designed and created from scratch by me and three other fantastic team members, Instacook is a web app which allows users to find new recipes or share their own favourite recipes. Instacook features functionality such as a recipe discovery page, recipe tag searching, recipe bookmarking and more!
           </p>
           <br />
           <p>
-            This passion project was made so that I had a way to upload & send files to friends more easily and without certain restrictions. I also wanted a way to host and share media with better URLs whilst also learning more about cloud infrastructure in the process.
-          </p>
-          <br />
-          <p>
-            My site's backend was originally written as a standard Express.js backend (non-serverless), but I wanted to experiment with serverless architecture. Rather than rewriting all my code in AWS Lambda, I decided to find a workaround. That's when I discovered the <a className="text-blue-500 hover:text-blue-700" href="https://www.serverless.com/">serverless framework</a>, a way for me to deploy my Express.js backend as a serverless backend on AWS. Originally, my site was also utilising MongoDB for its <Link className="text-blue-500 hover:text-blue-700" to="/shorten">link shortener</Link>, which is why I used MongoDB rather than AWS DynamoDB. AWS Amplify was also chosen to host my frontend (this whole site) since I was already comfortable with it.
+            Since Instacook was created for our capstone projects, a significant amount of documentation and planning was required, so I've also attached it at the bottom of this page for some insight into our design choices and for some more information on the project.
           </p>
 
           <h2 className="project-subheading pt-4">Challenges</h2>
           <hr className="my-2" />
           <ul className="ml-4 list-disc">
-            <li>Learning about specific cloud services and what they do</li>
-            <li>Researching and figuring out how to use AWS</li>
-            <li>Figuring out how to configure all the numerous settings for AWS, the Serverless Framework and the domain itself</li>
+            <li>Communication issues between team members regarding specific design decisions and missed details</li>
+            <li>Making sure all team members were on the same page</li>
+            <li>Forced migration to a local backend from a serverless backend due to a misunderstanding of project requirements</li>
           </ul>
 
           <h2 className="project-subheading pt-4">What I learned</h2>
           <hr className="my-2" />
           <ul className="ml-4 list-disc">
-            <li>What several AWS products do and what I can use them for</li>
-            <li>The benefits of cloud architecture and infrastructure</li>
-            <li>A bit about how to configure DNS records properly</li>
-            <li>A little more about JWT authentication</li>
+            <li>How to communicate and collaborate with team members more efficiently</li>
+            <li>How to work with GraphQL backends with React.js</li>
+            <li>How to convert user requirements into a fully working application more effectively</li>
           </ul>
 
           <h2 className="project-subheading pt-4">Links</h2>
           <hr className="my-2" />
           <ul className="ml-4 list-disc">
             <li>
-              Live Demo: {" "}
-              <Link className="text-blue-500 hover:text-blue-700" to="/host">{window.location.origin}/host</Link> (Please message me for an account!)
-            </li>
-            <li>Project Code: {" "}
+              Project Code: {" "}
               <a
-                className="text-blue-500 hover:text-blue-700"
-                href="https://github.com/mattlau1/mattlau"
+                className="hover:text-red-400 cook-colour"
+                href="https://github.com/mattlau1/instacook"
               >
-                https://github.com/mattlau1/mattlau
+                https://github.com/mattlau1/instacook
+              </a>
+            </li>
+            <li>Project Proposal: {" "}
+              <a
+                className="hover:text-red-400 cook-colour"
+                href="http://zap.mattlau.tech/Instacook+Project+Proposal.pdf"
+              >
+                http://zap.mattlau.tech/Instacook+Project+Proposal.pdf
+              </a>
+            </li>
+            <li>Project Report: {" "}
+              <a
+                className="hover:text-red-400 cook-colour"
+                href="http://zap.mattlau.tech/Instacook+Project+Report.pdf"
+              >
+                http://zap.mattlau.tech/Instacook+Project+Report.pdf
               </a>
             </li>
           </ul>
