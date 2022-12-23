@@ -1,14 +1,14 @@
 import React, { useEffect } from "react";
 import Slider from "react-slick";
 
-import health1 from "../images/health1.png";
-import health2 from "../images/health2.png";
-import health3 from "../images/health3.png";
-import health4 from "../images/health4.png";
-import health5 from "../images/health5.png";
-import health6 from "../images/health6.png";
-import finalists from "../images/hackiethon_finalists.png";
-import { ProjectImage } from "../components/Project/ProjectImage";
+import health1 from "../../images/projects/hamsterhealth/health1.png";
+import health2 from "../../images/projects/hamsterhealth/health2.png";
+import health3 from "../../images/projects/hamsterhealth/health3.png";
+import health4 from "../../images/projects/hamsterhealth/health4.png";
+import health5 from "../../images/projects/hamsterhealth/health5.png";
+import health6 from "../../images/projects/hamsterhealth/health6.png";
+import finalists from "../../images/projects/hamsterhealth/hackiethon_finalists.png";
+import { ProjectImage } from "../../components/Project/ProjectImage";
 
 interface HamsterHealthProps { }
 

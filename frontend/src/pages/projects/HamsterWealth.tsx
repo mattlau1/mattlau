@@ -1,13 +1,13 @@
 import React, { useEffect } from "react";
 import Slider from "react-slick";
 
-import award from "../images/chronicle_award.png";
-import wealth1 from "../images/wealth1.png";
-import wealth2 from "../images/wealth2.png";
-import wealth3 from "../images/wealth3.png";
-import wealth4 from "../images/wealth4.jpg";
-import wealth5 from "../images/wealth5.png";
-import { ProjectImage } from "../components/Project/ProjectImage";
+import award from "../../images/projects/hamsterwealth/chronicle_award.png";
+import wealth1 from "../../images/projects/hamsterwealth/wealth1.png";
+import wealth2 from "../../images/projects/hamsterwealth/wealth2.png";
+import wealth3 from "../../images/projects/hamsterwealth/wealth3.png";
+import wealth4 from "../../images/projects/hamsterwealth/wealth4.jpg";
+import wealth5 from "../../images/projects/hamsterwealth/wealth5.png";
+import { ProjectImage } from "../../components/Project/ProjectImage";
 
 interface HamsterWealthProps { }
 

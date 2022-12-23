@@ -1,12 +1,12 @@
 import React, { useEffect } from "react";
-import { FadeInSection } from "../components/Landing/FadeInSection";
-import { Introduction } from "../components/Landing/Introduction";
-import { ProjectCard } from "../components/Project/ProjectCard";
-import { ProjectImage } from "../components/Project/ProjectImage";
-import health from "../images/health.png";
-import wealth from "../images/wealth.png";
-import loopmania from "../images/loopmania.png";
-import hosting from "../images/hosting2.png";
+import { FadeInSection } from "../../components/Landing/FadeInSection";
+import { Introduction } from "../../components/Landing/Introduction";
+import { ProjectCard } from "../../components/Project/ProjectCard";
+import { ProjectImage } from "../../components/Project/ProjectImage";
+import health from "../../images/projects/hamsterhealth/health.png";
+import wealth from "../../images/projects/hamsterwealth/wealth.png";
+import loopmania from "../../images/projects/loopmania/loopmania.png";
+import hosting from "../../images/projects/filehosting/hosting2.png";
 
 interface LandingProps { }
 

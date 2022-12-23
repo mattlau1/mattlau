@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
 import Slider from "react-slick";
 
-import hosting1 from "../images/hosting1.png";
-import hosting2 from "../images/hosting2.png";
-import hosting3 from "../images/hosting3.png";
-import hosting4 from "../images/hosting4.png";
-import { ProjectImage } from "../components/Project/ProjectImage";
+import hosting1 from "../../images/projects/filehosting/hosting1.png";
+import hosting2 from "../../images/projects/filehosting/hosting2.png";
+import hosting3 from "../../images/projects/filehosting/hosting3.png";
+import hosting4 from "../../images/projects/filehosting/hosting4.png";
+import { ProjectImage } from "../../components/Project/ProjectImage";
 import { Link } from "react-router-dom";
 
 type Props = {
@@ -57,7 +57,7 @@ export const FileHosting = (props: Props) => {
           <h2 className="project-subheading pt-4">About</h2>
           <hr className="my-2" />
           <p>
-            Authenticated users can log in and choose a file to upload. After uploading it, a link starting with zap.mattlau.tech/ can be copied and shared.
+            Authenticated users can log in and choose a file to upload. After uploading it, a link prefixed with <code>zap.mattlau.tech</code> can be copied and shared.
           </p>
           <br />
           <p>

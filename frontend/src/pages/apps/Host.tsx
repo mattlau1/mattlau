@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import UploadForm from '../components/Host/UploadForm';
-import LoginForm from '../components/Host/LoginForm';
+import UploadForm from '../../components/Host/UploadForm';
+import LoginForm from '../../components/Host/LoginForm';
 
 type Props = {}
 
