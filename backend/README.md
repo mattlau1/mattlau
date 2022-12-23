@@ -2,6 +2,9 @@
 - This is the backend for my personal website, deployed on AWS Lambda via the serverless framework (https://www.serverless.com/)
 - Files are hosted on an S3 Bucket
 
+# Running the Backend
+- Use Node.js 16 `nvm use 16` and enter `npm run dev` to start the backend
+
 # Setup Instructions (for myself)
 - Check the `LOCAL` variable in `app.ts`
 - Check the CORS origin URL in `app.ts`

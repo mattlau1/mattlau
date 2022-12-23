@@ -66,6 +66,14 @@ h6 {
   }
 }
 
+.slick-dots li button:before {
+  color: white !important;
+}
+
+.slick-dots li.slick-active button:before {
+  color:white !important;
+}
+
 .project-card {
   background-color: #1f2937;
   transition: 0.3s;

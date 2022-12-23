@@ -45,6 +45,11 @@ function Nav() {
                             text="File Hosting Service"
                           />
                           <DropdownLink
+                            path="/projects/instacook"
+                            setDropdownOpen={setProjectDropdownOpen}
+                            text="Instacook"
+                          />
+                          <DropdownLink
                             path="/projects/loopmania"
                             setDropdownOpen={setProjectDropdownOpen}
                             text="Loop Mania"
@@ -79,7 +84,7 @@ function Nav() {
             </div>
             <div className="relative hidden md:block">
               <DropdownButton
-                buttonText="Apps"
+                buttonText="Site Apps"
                 dropdownOpen={appDropdownOpen}
                 setDropdownOpen={setAppDropdownOpen}
                 setOtherDropdownOpen={setProjectDropdownOpen}
@@ -197,7 +202,7 @@ function Nav() {
                   mobile
                 />
                 <DropdownButton
-                  buttonText="Apps"
+                  buttonText="Site Apps"
                   dropdownOpen={appDropdownOpen}
                   setDropdownOpen={setAppDropdownOpen}
                   setOtherDropdownOpen={setProjectDropdownOpen}
@@ -211,6 +216,11 @@ function Nav() {
                         path="/projects/host"
                         setDropdownOpen={setProjectDropdownOpen}
                         text="File Hosting Service"
+                      />
+                      <DropdownLink
+                        path="/projects/instacook"
+                        setDropdownOpen={setProjectDropdownOpen}
+                        text="Instacook"
                       />
                       <DropdownLink
                         path="/projects/loopmania"

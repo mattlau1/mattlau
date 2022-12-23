@@ -12,7 +12,6 @@ import cook9 from "../../images/projects/instacook/cook9.png";
 import cook10 from "../../images/projects/instacook/cook10.png";
 
 import { ProjectImage } from "../../components/Project/ProjectImage";
-import { Link } from "react-router-dom";
 
 type Props = {
 }

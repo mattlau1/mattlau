@@ -7,6 +7,7 @@ import health from "../../images/projects/hamsterhealth/health.png";
 import wealth from "../../images/projects/hamsterwealth/wealth.png";
 import loopmania from "../../images/projects/loopmania/loopmania.png";
 import hosting from "../../images/projects/filehosting/hosting2.png";
+import cook from "../../images/projects/instacook/cook1.png"
 
 interface LandingProps { }
 
@@ -24,6 +25,15 @@ export const Landing: React.FC<LandingProps> = () => {
           projectName="File Hosting Service"
           projectType="Cloud Storage and Media Sharing Utility"
           projectRoute="host"
+        />
+      </FadeInSection>
+
+      <FadeInSection>
+        <ProjectCard
+          projectImage={<ProjectImage image={cook} />}
+          projectName="Instacook"
+          projectType="Recipe Sharing App"
+          projectRoute="instacook"
         />
       </FadeInSection>
 
