@@ -87,7 +87,7 @@ export const Instacook = (props: Props) => {
           <hr className="my-2" />
           <ul className="ml-4 list-disc">
             <li>How to communicate and collaborate with team members more efficiently</li>
-            <li>How to work with GraphQL backends with React.js</li>
+            <li>How to work with GraphQL backends on React.js</li>
             <li>How to convert user requirements into a fully working application more effectively</li>
           </ul>
 
