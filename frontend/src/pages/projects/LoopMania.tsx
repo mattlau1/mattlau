@@ -92,25 +92,25 @@ export const LoopMania: React.FC<LoopManiaProps> = () => {
             <li>Project Timeline {" "}
               <a
                 className="loop-colour hover:text-green-600"
-                href="http://zap.mattlau.tech/Loop%20Mania%20Project%20Timeline.pdf"
+                href="http://zap.mattlau.dev/Loop%20Mania%20Project%20Timeline.pdf"
               >
-                http://zap.mattlau.tech/Loop%20Mania%20Project%20Timeline.pdf
+                http://zap.mattlau.dev/Loop%20Mania%20Project%20Timeline.pdf
               </a>
             </li>
             <li>UML Diagram: {" "}
               <a
                 className="loop-colour hover:text-green-600"
-                href="http://zap.mattlau.tech/Loop%20Mania%20UML%20Diagram.pdf"
+                href="http://zap.mattlau.dev/Loop%20Mania%20UML%20Diagram.pdf"
               >
-                http://zap.mattlau.tech/Loop%20Mania%20UML%20Diagram.pdf
+                http://zap.mattlau.dev/Loop%20Mania%20UML%20Diagram.pdf
               </a>
             </li>
             <li>UI Design {" "}
               <a
                 className="loop-colour hover:text-green-600"
-                href="http://zap.mattlau.tech/Loop%20Mania%20UI%20Design.pdf"
+                href="http://zap.mattlau.dev/Loop%20Mania%20UI%20Design.pdf"
               >
-                http://zap.mattlau.tech/Loop%20Mania%20UI%20Design.pdf
+                http://zap.mattlau.dev/Loop%20Mania%20UI%20Design.pdf
               </a>
             </li>
           </ul>
