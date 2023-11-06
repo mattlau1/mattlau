@@ -57,7 +57,7 @@ export const FileHosting = (props: Props) => {
           <h2 className="project-subheading pt-4">About</h2>
           <hr className="my-2" />
           <p>
-            Authenticated users can log in and choose a file to upload. After uploading it, a link prefixed with <code>zap.mattlau.tech</code> can be copied and shared.
+            Authenticated users can log in and choose a file to upload. After uploading it, a link prefixed with <code>zap.mattlau.dev</code> can be copied and shared.
           </p>
           <br />
           <p>
