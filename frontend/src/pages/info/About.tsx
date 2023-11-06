@@ -29,7 +29,7 @@ export const About: React.FC<AboutProps> = () => {
 
               <p className="text-xl text-gray-100 mb-8 text-left">
                 Feel free to check out some of my other projects on my <a className="text-blue-500 hover:text-blue-700" href="https://github.com/mattlau1">Github profile</a>, or message me
-                about anything on <a className="text-blue-500 hover:text-blue-700" href="https://www.linkedin.com/in/matthew-lau1/">LinkedIn</a>! Alternatively, please email me at <a className="text-blue-500 hover:text-blue-700" href="mailto:matt@mattlau.tech">matt@mattlau.tech</a>.
+                about anything on <a className="text-blue-500 hover:text-blue-700" href="https://www.linkedin.com/in/matthew-lau1/">LinkedIn</a>! Alternatively, please email me at <a className="text-blue-500 hover:text-blue-700" href="mailto:matt@mattlau.dev">matt@mattlau.dev</a>.
               </p>
             </div>
             <div className="max-w-3xl mx-auto grid grid-cols-4 gap-y-2 md:grid-cols-8 sm:grid-cols-4">
