@@ -13,7 +13,7 @@ export const Introduction: React.FC<IntroductionProps> = () => {
             </h1>
             <div className="max-w-3xl mx-auto">
               <p className="text-xl text-gray-100 mb-8">
-                I'm an aspiring software engineer and a 2022 computer science graduate. Here are some of the projects that I've been working on!
+                I'm an aspiring software engineer and a 2023 computer science graduate. Welcome to my site!
               </p>
               <div className="mx-auto py-16 block">
                 <svg
