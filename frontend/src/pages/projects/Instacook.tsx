@@ -106,17 +106,17 @@ export const Instacook = (props: Props) => {
             <li>Project Proposal: {" "}
               <a
                 className="hover:text-red-400 cook-colour"
-                href="http://zap.mattlau.tech/Instacook+Project+Proposal.pdf"
+                href="http://zap.mattlau.dev/Instacook+Project+Proposal.pdf"
               >
-                http://zap.mattlau.tech/Instacook+Project+Proposal.pdf
+                http://zap.mattlau.dev/Instacook+Project+Proposal.pdf
               </a>
             </li>
             <li>Project Report: {" "}
               <a
                 className="hover:text-red-400 cook-colour"
-                href="http://zap.mattlau.tech/Instacook+Project+Report.pdf"
+                href="http://zap.mattlau.dev/Instacook+Project+Report.pdf"
               >
-                http://zap.mattlau.tech/Instacook+Project+Report.pdf
+                http://zap.mattlau.dev/Instacook+Project+Report.pdf
               </a>
             </li>
           </ul>
