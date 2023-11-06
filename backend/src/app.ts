@@ -42,7 +42,7 @@ console.log("Created S3 Client");
 
 // CORS config
 const corsOptions = {
-  origin: LOCAL ? "http://localhost:3000" : "https://www.mattlau.tech",
+  origin: LOCAL ? "http://localhost:3000" : "https://www.mattlau.dev",
   credentials: true,
   optionSuccessStatus: 200,
 };
@@ -52,7 +52,7 @@ const upload = multer({
   storage: multerS3({
     s3: s3,
     acl: 'public-read',
-    bucket: 'zap.mattlau.tech',
+    bucket: 'zap.mattlau.dev',
     cacheControl: 'max-age=31536000',
     contentType: (req, file, cb) => {
       cb(null, file.mimetype);
