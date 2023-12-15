@@ -58,7 +58,7 @@ export const Footer: React.FC<FooterProps> = () => {
             </a>
           </li>
         </ul>
-        <div className="flex mx-auto text-white text-center">Copyright Matthew Lau © 2021-2022</div>
+        <div className="flex mx-auto text-white text-center">Copyright Matthew Lau © {new Date().getFullYear()}</div>
       </div>
     </footer>
   );
