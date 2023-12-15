@@ -23,7 +23,7 @@ export const About: React.FC<AboutProps> = () => {
             </h1>
             <div className="max-w-3xl mx-auto">
               <p className="text-xl text-gray-100 mb-8 text-left">
-                I'm a 2022 computer science graduate from the
+                I'm a 2023 computer science graduate from the
                 University of New South Wales (UNSW) in Sydney.
               </p>
 
