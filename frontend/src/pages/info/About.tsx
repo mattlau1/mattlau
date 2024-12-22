@@ -18,18 +18,25 @@ export const About: React.FC<AboutProps> = () => {
               data-aos="zoom-y-out"
             >
               <span className="bg-clip-text text-white about-title linear-gradient">
-                I'm Matthew!
+                I'm Matt!
               </span>
             </h1>
             <div className="max-w-3xl mx-auto">
               <p className="text-xl text-gray-100 mb-8 text-left">
-                I'm a 2023 computer science graduate from the
-                University of New South Wales (UNSW) in Sydney.
+                I graduated in 2023 from UNSW Sydney with a Bachelor of Science in Computer Science with a distinction!
               </p>
-
+              <p className="text-xl text-gray-100 mb-8 text-left">
+                I worked as a graduate QA engineer for 6 months (July 2024 - January 2025) at American Gaming Systems in Sydney, where I tested games and worked on tool development to improve processes (C#, Python).
+              </p>
+              <p className="text-xl text-gray-100 mb-8 text-left">
+                Currently, I work as a full-time graduate software engineer (January 2025 - Present) at American Gaming Systems, where I develop games in Unity (C#) alongside an amazing team.
+              </p>
+              <p className="text-xl text-gray-100 mb-8 text-left">
+                Overall, I really enjoy game development and working on projects that have an impact!
+              </p>
               <p className="text-xl text-gray-100 mb-8 text-left">
                 Feel free to check out some of my other projects on my <a className="text-blue-500 hover:text-blue-700" href="https://github.com/mattlau1">Github profile</a>, or message me
-                about anything on <a className="text-blue-500 hover:text-blue-700" href="https://www.linkedin.com/in/matthew-lau1/">LinkedIn</a>! Alternatively, please email me at <a className="text-blue-500 hover:text-blue-700" href="mailto:matt@mattlau.dev">matt@mattlau.dev</a>.
+                about absolutely anything on <a className="text-blue-500 hover:text-blue-700" href="https://www.linkedin.com/in/matthew-lau1/">LinkedIn</a>! Alternatively, please email me at <a className="text-blue-500 hover:text-blue-700" href="mailto:matt@mattlau.dev">matt@mattlau.dev</a>.
               </p>
             </div>
             <div className="max-w-3xl mx-auto grid grid-cols-4 gap-y-2 md:grid-cols-8 sm:grid-cols-4">
