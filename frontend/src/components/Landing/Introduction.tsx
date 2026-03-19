@@ -13,7 +13,7 @@ export const Introduction: React.FC<IntroductionProps> = () => {
             </h1>
             <div className="max-w-3xl mx-auto">
               <p className="text-xl text-gray-100 mb-8">
-                I develop games as a graduate/junior software engineer at American Gaming Systems! 
+                I work on casino games using C# as a software engineer at PlayAGS! 
               </p>
               <div className="mx-auto py-16 block">
                 <svg
